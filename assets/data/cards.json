@@ -1,0 +1,34 @@
+[
+	{
+		"name": "apple",
+		"image": "assets/icons/apple.png"
+	},
+	{
+		"name": "cupcake",
+		"image": "assets/icons/cupcake.png"
+	},
+	{
+		"name": "dinosaur",
+		"image": "assets/icons/dinosaur.png"
+	},
+	{
+		"name": "dog",
+		"image": "assets/icons/dog.png"
+	},
+	{
+		"name": "googles",
+		"image": "assets/icons/googles.png"
+	},
+	{
+		"name": "smiling-face",
+		"image": "assets/icons/smiling-face.png"
+	},
+	{
+		"name": "sports",
+		"image": "assets/icons/sports.png"
+	},
+	{
+		"name": "wizard-hat",
+		"image": "assets/icons/wizard-hat.png"
+	}
+]
