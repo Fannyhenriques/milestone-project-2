@@ -4,6 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A fun beginner friendly online Memory game">
+	<meta name="author" content="Fanny Henriques">
+	<link rel="stylesheet" href="style.css" />
 	<title>Memory Match</title>
 </head>
 
@@ -26,12 +29,30 @@
 
 		</section>
 
-		<section class="game-board">
+		<section class="game-board hidden">
 
+		</section>
+
+		<section class="game-info hidden">
+			<div class="info-box">
+				<span>Moves:</span>
+				<span id="moves"></span>
+			</div>
+
+			<div class="info-box">
+				<span>Misses:</span>
+				<span id="misses"></span>
+			</div>
+
+			<div class="info-box">
+				<span>Score:</span>
+				<span id="score"></span>
+			</div>
 		</section>
 
 	</main>
 
+	<script src="script.js" defer></script>
 </body>
 
 </html>
