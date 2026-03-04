@@ -25,6 +25,28 @@ startForm.addEventListener("submit", (e) => {
 	startGame(playerName);
 });
 
+// function for handeling UI and start game
 function startGame(name) {
-	console.log(name)
+	// hide the start-section
+	startSection.classList.add("hidden");
+
+	// fetch game and scoreboard  
+	gameBoard.classList.remove("hidden");
+	gameInfo.classList.remove("hidden");
+	welcomeMessage.classList.remove("hidden");
+
+	welcomeMessage.innerText = `Welcome ${name}!`;
+
+	resetGameData();
+}
+
+// resets the scoreboard
+function resetGameData() {
+	moves = 0;
+	misses = 0;
+	score = 100;
+
+	movesEl.innerText = moves;
+	missesEl.innerText = misses;
+	scoreEl.innerText = score;
 }
