@@ -24,17 +24,25 @@ nav {
     gap: 2rem;
 }
 
+.start-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
 .game-board {
     display: grid;
     grid-template-columns: repeat(4, 120px);
     grid-template-rows: repeat(4, 120px);
-    gap: 15px;
+    gap: 1rem;
     margin-bottom: 40px;
 }
 
 
 .card {
-    background-color: black;
+    background: #EEAECA;
+    background: linear-gradient(90deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -49,6 +57,6 @@ nav {
     background: white;
     padding: 10px 20px;
     border-radius: 8px;
-    min-width: 150px;
+    min-width: 100px;
     text-align: center;
 }
