@@ -50,3 +50,21 @@ function resetGameData() {
 	missesEl.innerText = misses;
 	scoreEl.innerText = score;
 }
+
+let cards = [];
+
+//fetching cards from jsonfile 
+fetch("assets/data/cards.json")
+	.then((res) => res.json())
+	.then((data) => {
+		cards = data;
+		console.log("Cards loaded:", cards);
+	})
+	.catch((err) => console.error("Failed to load cards:", err));
+
+function shuffleCards(cardArray) {
+	const doubled = [...cardArray, ...cardArray]; // create pairs for cards
+	//sort the array of cards, shuffles order - maybe change later to something better?
+	return doubled.sort(() => Math.random() - 0.5);
+}
+
