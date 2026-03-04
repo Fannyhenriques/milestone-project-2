@@ -8,3 +8,23 @@ const welcomeMessage = document.getElementById("welcome-message");
 const movesEl = document.getElementById("moves");
 const missesEl = document.getElementById("misses");
 const scoreEl = document.getElementById("score");
+
+// global variables for moves/misses/score
+let moves = 0;
+let misses = 0;
+let score = 100;
+
+// fetching name before starting the game
+startForm.addEventListener("submit", (e) => {
+	e.preventDefault(); //preventing page reload
+
+	const playerName = document.getElementById("player-name").value.trim();
+
+	if (playerName.length < 2) return;
+
+	startGame(playerName);
+});
+
+function startGame(name) {
+	console.log(name)
+}
