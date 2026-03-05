@@ -9,10 +9,17 @@ const movesEl = document.getElementById("moves");
 const missesEl = document.getElementById("misses");
 const scoreEl = document.getElementById("score");
 
-// global variables for moves/misses/score
+// global variables
 let moves = 0;
 let misses = 0;
 let score = 100;
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false; //lock board, should not be able to pick more than two cards
+
+let cards = [];
+
 
 // fetching name before starting the game
 startForm.addEventListener("submit", (e) => {
@@ -38,6 +45,9 @@ function startGame(name) {
 	welcomeMessage.innerText = `Welcome ${name}!`;
 
 	resetGameData();
+
+	const shuffledCards = shuffleCards(cards);
+	renderGameBoard(shuffledCards);
 }
 
 // resets the scoreboard
@@ -50,8 +60,6 @@ function resetGameData() {
 	missesEl.innerText = misses;
 	scoreEl.innerText = score;
 }
-
-let cards = [];
 
 //fetching cards from jsonfile 
 fetch("assets/data/cards.json")
@@ -67,4 +75,3 @@ function shuffleCards(cardArray) {
 	//sort the array of cards, shuffles order - maybe change later to something better?
 	return doubled.sort(() => Math.random() - 0.5);
 }
-
