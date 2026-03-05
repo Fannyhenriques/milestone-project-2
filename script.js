@@ -48,7 +48,7 @@ function startGame(name) {
 
 	const shuffledCards = shuffleCards(cards);
 	renderGameBoard(shuffledCards);
-}
+};
 
 // resets the scoreboard
 function resetGameData() {
@@ -59,7 +59,7 @@ function resetGameData() {
 	movesEl.innerText = moves;
 	missesEl.innerText = misses;
 	scoreEl.innerText = score;
-}
+};
 
 //fetching cards from jsonfile 
 fetch("assets/data/cards.json")
@@ -74,4 +74,33 @@ function shuffleCards(cardArray) {
 	const doubled = [...cardArray, ...cardArray]; // create pairs for cards
 	//sort the array of cards, shuffles order - maybe change later to something better?
 	return doubled.sort(() => Math.random() - 0.5);
-}
+};
+
+cardsArray.forEach(card => {
+	const cardElement = document.createElement("div");
+	cardElement.classList.add("card");
+	cardElement.dataset.name = card.name;
+
+	const cardInner = document.createElement("div");
+	cardInner.classList.add("card-inner");
+
+	const cardFront = document.createElement("div");
+	cardFront.classList.add("card-front");
+	cardFront.innerText = "";
+
+	const cardBack = document.createElement("div");
+	cardBack.classList.add("card-back");
+	const img = document.createElement("img");
+	img.src = card.icon;
+	img.alt = card.name;
+	cardBack.appendChild(img);
+
+	cardInner.appendChild(cardFront);
+	cardInner.appendChild(cardBack);
+
+	cardElement.appendChild(cardInner);
+
+	gameBoard.appendChild(cardElement);
+
+	cardElement.addEventListener("click", () => flipCard(cardElement));
+});
