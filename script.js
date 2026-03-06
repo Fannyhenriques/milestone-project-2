@@ -119,4 +119,27 @@ function flipCard(card) {
 	secondCard = card;
 	moves++;
 	movesEl.innerText = moves;
+
+	checkMatch();
 };
+
+//check if cards are matching
+function checkMatch() {
+	const isMatch = firstCard.dataset.name === secondCard.dataset.name;
+
+	if (isMatch) {
+		resetFlippedCards();
+	} else {
+		misses++;
+		score -= 5;
+		missesEl.innerText = misses;
+		scoreEl.innerText = score;
+
+		lockBoard = true;
+		setTimeout(() => {
+			firstCard.classList.remove("flipped");
+			secondCard.classList.remove("flipped");
+			resetFlippedCards();
+		}, 1000);
+	}
+}
