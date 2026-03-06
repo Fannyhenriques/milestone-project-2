@@ -143,3 +143,9 @@ function checkMatch() {
 		}, 1000);
 	}
 }
+
+// helper function to reset selected cards and unlock board
+function resetFlippedCards() {
+	[firstCard, secondCard] = [null, null];
+	lockBoard = false;
+}
