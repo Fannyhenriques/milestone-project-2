@@ -76,35 +76,36 @@ function shuffleCards(cardArray) {
 	return doubled.sort(() => Math.random() - 0.5);
 };
 
-cardsArray.forEach(card => {
-	const cardElement = document.createElement("div");
-	cardElement.classList.add("card");
-	cardElement.dataset.name = card.name;
+function renderGameBoard(cardsArray) {
+	gameBoard.innerHTML = "";
 
-	const cardInner = document.createElement("div");
-	cardInner.classList.add("card-inner");
+	cardsArray.forEach(card => {
+		const cardElement = document.createElement("div");
+		cardElement.classList.add("card");
+		cardElement.dataset.name = card.name;
 
-	const cardFront = document.createElement("div");
-	cardFront.classList.add("card-front");
-	cardFront.innerText = "";
+		const cardInner = document.createElement("div");
+		cardInner.classList.add("card-inner");
 
-	const cardBack = document.createElement("div");
-	cardBack.classList.add("card-back");
-	const img = document.createElement("img");
-	img.src = card.icon;
-	img.alt = card.name;
-	cardBack.appendChild(img);
+		const cardFront = document.createElement("div");
+		cardFront.classList.add("card-front");
+		cardFront.innerText = "";
 
-	cardInner.appendChild(cardFront);
-	cardInner.appendChild(cardBack);
+		const cardBack = document.createElement("div");
+		cardBack.classList.add("card-back");
+		const img = document.createElement("img");
+		img.src = card.icon;
+		img.alt = card.name;
+		cardBack.appendChild(img);
 
-	cardElement.appendChild(cardInner);
+		cardInner.appendChild(cardFront);
+		cardInner.appendChild(cardBack);
+		cardElement.appendChild(cardInner);
+		gameBoard.appendChild(cardElement);
 
-	gameBoard.appendChild(cardElement);
-
-	cardElement.addEventListener("click", () => flipCard(cardElement));
-});
-
+		cardElement.addEventListener("click", () => flipCard(cardElement));
+	});
+}
 
 function flipCard(card) {
 	if (lockBoard || card.classList.contains("flipped")) return;
