@@ -104,3 +104,19 @@ cardsArray.forEach(card => {
 
 	cardElement.addEventListener("click", () => flipCard(cardElement));
 });
+
+
+function flipCard(card) {
+	if (lockBoard || card.classList.contains("flipped")) return;
+	// if board is locked or if card is flipped, do nothing, otherwise trigger flip card animation:
+	card.classList.add("flipped");
+
+	if (!firstCard) {
+		firstCard = card;
+		return;
+	}
+
+	secondCard = card;
+	moves++;
+	movesEl.innerText = moves;
+};
