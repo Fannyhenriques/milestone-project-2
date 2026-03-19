@@ -13,6 +13,9 @@
 <body>
 	<header>
 		<nav>
+			<a href="/index.html">
+				<img src="/assets/icons/logo.png" alt="logo of memory cards" class="logo">
+			</a>
 			<h1>Memory Match</h1>
 			<button id="rules-btn">Game Rules</button>
 		</nav>
@@ -49,6 +52,14 @@
 				<span>Score:</span>
 				<span id="score"></span>
 			</div>
+		</section>
+		<section id="end-screen" class="end-screen hidden">
+			<h2 id="end-message"></h2>
+			<p id="final-score"></p>
+			<p id="final-moves"></p>
+			<p id="final-misses"></p>
+			<button id="play-again-btn" class="btn">Play Again</button>
+			<button id="new-game-btn" class="btn">New Game</button>
 		</section>
 
 	</main>
