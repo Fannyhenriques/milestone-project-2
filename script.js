@@ -24,6 +24,7 @@ let secondCard = null;
 let lockBoard = false; //lock board, should not be able to pick more than two cards
 
 let cards = [];
+let matches = 0;
 
 
 // fetching name before starting the game
@@ -60,6 +61,7 @@ function resetGameData() {
 	moves = 0;
 	misses = 0;
 	score = 100;
+	matches = 0;
 
 	movesEl.innerText = moves;
 	missesEl.innerText = misses;
@@ -134,7 +136,17 @@ function checkMatch() {
 	const isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
 	if (isMatch) {
+		matches++;
+
+		firstCard.removeEventListener("click", flipCard);
+		secondCard.removeEventListener("click", flipCard);
+
 		resetFlippedCards();
+
+		if (matches === cards.length) {
+			setTimeout(endGame, 500);
+		}
+
 	} else {
 		misses++;
 		score -= 5;
