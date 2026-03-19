@@ -13,6 +13,8 @@ const endMessage = document.getElementById("end-message");
 const finalScore = document.getElementById("final-score");
 const finalMoves = document.getElementById("final-moves");
 const finalMisses = document.getElementById("final-misses");
+const playAgainBtn = document.getElementById("play-again-btn");
+const newGameBtn = document.getElementById("new-game-btn");
 
 // global variables
 let moves = 0;
@@ -24,6 +26,7 @@ let secondCard = null;
 let lockBoard = false; //lock board, should not be able to pick more than two cards
 
 let cards = [];
+
 let matches = 0;
 
 
@@ -167,6 +170,7 @@ function resetFlippedCards() {
 	[firstCard, secondCard] = [null, null];
 	lockBoard = false;
 }
+
 function endGame() {
 	gameBoard.classList.add("hidden");
 	gameInfo.classList.add("hidden");
@@ -180,3 +184,20 @@ function endGame() {
 	finalMoves.innerText = `Your total moves: ${moves}`;
 	finalMisses.innerText = `Your misses: ${misses}`;
 }
+
+function restartGame() {
+
+	endScreen.classList.add("hidden");
+
+	gameBoard.classList.remove("hidden");
+	gameInfo.classList.remove("hidden");
+	welcomeMessage.classList.remove("hidden");
+
+	resetGameData();
+
+	const shuffledCards = shuffleCards(cards);
+	renderGameBoard(shuffledCards);
+}
+
+playAgainBtn.addEventListener("click", restartGame);
+
