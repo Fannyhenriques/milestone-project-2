@@ -8,6 +8,11 @@ const welcomeMessage = document.getElementById("welcome-message");
 const movesEl = document.getElementById("moves");
 const missesEl = document.getElementById("misses");
 const scoreEl = document.getElementById("score");
+const endScreen = document.getElementById("end-screen");
+const endMessage = document.getElementById("end-message");
+const finalScore = document.getElementById("final-score");
+const finalMoves = document.getElementById("final-moves");
+const finalMisses = document.getElementById("final-misses");
 
 // global variables
 let moves = 0;
@@ -149,4 +154,17 @@ function checkMatch() {
 function resetFlippedCards() {
 	[firstCard, secondCard] = [null, null];
 	lockBoard = false;
+}
+function endGame() {
+	gameBoard.classList.add("hidden");
+	gameInfo.classList.add("hidden");
+	welcomeMessage.classList.add("hidden");
+
+	endScreen.classList.remove("hidden");
+
+	endMessage.innerText = `🎉 Well done ${playerName}! 🎉`;
+
+	finalScore.innerText = `You scored: ${score}`;
+	finalMoves.innerText = `Your total moves: ${moves}`;
+	finalMisses.innerText = `Your misses: ${misses}`;
 }
