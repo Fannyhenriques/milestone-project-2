@@ -195,6 +195,8 @@ function endGame() {
 	finalScore.innerText = `You scored: ${score}`;
 	finalMoves.innerText = `Your total moves: ${moves}`;
 	finalMisses.innerText = `Your misses: ${misses}`;
+
+	createConfettiBurst();
 }
 
 function restartGame() {
@@ -241,4 +243,31 @@ rulesModal.addEventListener("click", (e) => {
 		rulesModal.classList.add("hidden");
 	}
 });
+
+function createConfettiBurst() {
+	for (let i = 0; i < 60; i++) {
+		const confetti = document.createElement("div");
+		confetti.classList.add("confetti");
+
+		// färger
+		const colors = ["#f12ec0", "#116179", "#ffcc00", "#4caf50"];
+		confetti.style.backgroundColor =
+			colors[Math.floor(Math.random() * colors.length)];
+
+		const x = (Math.random() - 0.5) * 600 + "px";
+		const y = (Math.random() - 0.5) * 600 + "px";
+
+		confetti.style.setProperty("--x", x);
+		confetti.style.setProperty("--y", y);
+
+		// animation
+		confetti.style.animation = "burst 0.8s ease-out forwards";
+
+		document.body.appendChild(confetti);
+
+		setTimeout(() => {
+			confetti.remove();
+		}, 800);
+	}
+}
 

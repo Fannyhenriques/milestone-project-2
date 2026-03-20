@@ -271,6 +271,22 @@ input:focus {
 	font-size: 1.3rem;
 }
 
+.confetti {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	z-index: 9999;
+	pointer-events: none;
+}
+
+@keyframes burst {
+	to {
+		transform: translate(var(--x), var(--y)) rotate(720deg);
+		opacity: 0;
+	}
+}
 
 .hidden {
     display: none;
