@@ -201,3 +201,18 @@ function restartGame() {
 
 playAgainBtn.addEventListener("click", restartGame);
 
+function newGame() {
+
+	endScreen.classList.add("hidden");
+	gameBoard.classList.add("hidden");
+	gameInfo.classList.add("hidden");
+	welcomeMessage.classList.add("hidden");
+
+	startSection.classList.remove("hidden");
+
+	document.getElementById("player-name").value = "";
+}
+
+newGameBtn.addEventListener("click", newGame);
+
+
