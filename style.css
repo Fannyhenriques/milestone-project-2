@@ -161,6 +161,52 @@ input:focus {
     min-width: 100px;
     text-align: center;
 }
+
+.rules-modal {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.rules-content {
+	background: white;
+	padding: 30px;
+	border-radius: 10px;
+	max-width: 400px;
+	text-align: center;
+	position: relative;
+	z-index: 10000;
+	animation: popup 0.25s ease;
+}
+
+.rules-content h2 {
+	color: rgb(110, 69, 138);
+}
+
+.rules-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin: 1rem;
+	text-align: left;
+}
+
+@keyframes popup {
+	from {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
 .end-screen {
 	border: 1px solid black;
 	border-radius: 10px;
