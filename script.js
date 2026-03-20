@@ -225,4 +225,18 @@ function newGame() {
 
 newGameBtn.addEventListener("click", newGame);
 
+rulesBtn.addEventListener("click", () => {
+	rulesModal.classList.remove("hidden");
+});
+
+closeRulesBtn.addEventListener("click", () => {
+	rulesModal.classList.add("hidden");
+	console.log("clicked")
+});
+
+rulesModal.addEventListener("click", (e) => {
+	if (e.target === rulesModal) {
+		rulesModal.classList.add("hidden");
+	}
+});
 
