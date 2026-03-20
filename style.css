@@ -5,11 +5,29 @@
 }
 
 body {
-    background-color: #f4f4f4;
+	background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+	font-family: "Varela";
+	font-weight: 200;
+}
+
+h1 {
+	font-size: 3rem;
+	letter-spacing: 2px;
+	font-family: "Bangers", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	background: linear-gradient(to right, rgb(241, 46, 192) 0%, rgb(17, 97, 121) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+p {
+	font-size: 1.2rem;
+	line-height: 1.6;
 }
 
 header {
