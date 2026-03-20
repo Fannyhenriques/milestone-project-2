@@ -33,13 +33,27 @@ nav {
 .logo:hover {
 	transform: scale(1.1);
 }
+
+.btn {
+	padding: 10px 20px;
+	border-radius: 8px;
+	background-color: white;
+	border: 1px solid black;
+	font-size: 1rem;
+}
+
+.btn:hover {
+	background-color: rgb(110, 69, 138);
+	border: 1px solid black;
+	color: #f2f2f2;
 }
 
 .start-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+	margin-top: 3rem;
+	gap: 1rem;
 }
 
 .game-board {
