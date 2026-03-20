@@ -74,6 +74,19 @@ nav {
 	gap: 1rem;
 }
 
+input {
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	font-size: 1rem;
+	margin-right: 10px;
+}
+
+input:focus {
+	outline: none;
+	border-color: rgb(110, 69, 138);
+}
+
 .game-board {
     display: grid;
     grid-template-columns: repeat(4, 120px);
