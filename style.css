@@ -235,6 +235,18 @@ input:focus {
 		opacity: 1;
 	}
 }
+#moves,
+#misses,
+#score {
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: rgb(17, 97, 121);
+}
+
+#score.low-score {
+	color: red;
+	font-weight: bold;
+}
 
 .hidden {
     display: none;

@@ -166,6 +166,8 @@ function checkMatch() {
 		missesEl.innerText = misses;
 		scoreEl.innerText = score;
 
+		scoreEl.classList.toggle("low-score", score < 50);
+
 		lockBoard = true;
 		setTimeout(() => {
 			firstCard.classList.remove("flipped");
