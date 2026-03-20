@@ -17,6 +17,8 @@ const playAgainBtn = document.getElementById("play-again-btn");
 const newGameBtn = document.getElementById("new-game-btn");
 
 // global variables
+let playerName = "";
+
 let moves = 0;
 let misses = 0;
 let score = 100;
@@ -43,6 +45,7 @@ startForm.addEventListener("submit", (e) => {
 
 // function for handeling UI and start game
 function startGame(name) {
+	playerName = name;
 	// hide the start-section
 	startSection.classList.add("hidden");
 
@@ -51,7 +54,7 @@ function startGame(name) {
 	gameInfo.classList.remove("hidden");
 	welcomeMessage.classList.remove("hidden");
 
-	welcomeMessage.innerText = `Welcome ${name}!`;
+	welcomeMessage.innerText = `Lets go ${name}!`;
 
 	resetGameData();
 
