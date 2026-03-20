@@ -8,6 +8,8 @@ const welcomeMessage = document.getElementById("welcome-message");
 const movesEl = document.getElementById("moves");
 const missesEl = document.getElementById("misses");
 const scoreEl = document.getElementById("score");
+
+//element för end message
 const endScreen = document.getElementById("end-screen");
 const endMessage = document.getElementById("end-message");
 const finalScore = document.getElementById("final-score");
@@ -15,6 +17,11 @@ const finalMoves = document.getElementById("final-moves");
 const finalMisses = document.getElementById("final-misses");
 const playAgainBtn = document.getElementById("play-again-btn");
 const newGameBtn = document.getElementById("new-game-btn");
+
+//popup
+const rulesBtn = document.getElementById("rules-btn");
+const rulesModal = document.getElementById("rules-modal");
+const closeRulesBtn = document.getElementById("close-rules-btn");
 
 // global variables
 let playerName = "";
