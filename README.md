@@ -33,7 +33,21 @@ The scoring system starts each game at 100 points, with 5 points subtracted for 
 # User Experience (UX)
 
 ## Target Audience
+The target audience for this memory game is users who enjoy simple, casual games and want to challenge or improve their memory.
 
+They are most likely to:
+- want a quick and easy game that is simple to understand
+- play in short sessions, for example during breaks or free time
+- appreciate a playful and visually engaging design
+- access the game on different devices, including mobile and tablet
+
+The game is designed to be accessible to a wide audience rather than a specific group. Since memory games are familiar to most people, it can appeal to both children and adults.
+
+To make the experience more inclusive and child-friendly, the design uses:
+- bright and playful colors
+- simple and recognizable icons (such as animals and everyday objects)
+
+At the same time, the scoring system (losing points for incorrect matches) adds a small challenge, making the game engaging even for older users who want to test their memory and improve their performance.
 
 ## User Stories
 
