@@ -1,3 +1,28 @@
+:root {
+	/* Base */
+	--color-background: #f2f2f2;
+	--color-surface: #ffffff;
+	--color-card-back: #f4eeee;
+	--color-border: #000000;
+	--color-border-light: #cccccc;
+
+	/* Game feel */
+	--color-primary: rgb(110, 69, 138);
+	--color-secondary: rgb(17, 97, 121);
+
+	/* Feedback */
+	--color-danger: #e63946;
+
+	/* Gradients */
+	--gradient-title: linear-gradient(to right,
+			rgb(241, 46, 192) 0%,
+			rgb(17, 97, 121) 100%);
+
+	--gradient-card: linear-gradient(50deg,
+			rgba(238, 174, 202, 1) 0%,
+			rgba(148, 187, 233, 1) 100%);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,7 +30,7 @@
 }
 
 body {
-	background-color: #f2f2f2;
+	background-color: var(--color-background);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -20,7 +45,7 @@ h1 {
 	font-family: "Bangers", system-ui;
 	font-weight: 400;
 	font-style: normal;
-	background: linear-gradient(to right, rgb(241, 46, 192) 0%, rgb(17, 97, 121) 100%);
+	background: var(--gradient-title);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -55,15 +80,15 @@ nav {
 .btn {
 	padding: 10px 20px;
 	border-radius: 8px;
-	background-color: white;
-	border: 1px solid black;
+	background-color: var(--color-surface);
+	border: 1px solid var(--color-border);
 	font-size: 1rem;
 }
 
 .btn:hover {
-	background-color: rgb(110, 69, 138);
-	border: 1px solid black;
-	color: #f2f2f2;
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-border);
+	color: var(--color-background);
 }
 
 .start-section {
@@ -77,21 +102,21 @@ nav {
 input {
 	padding: 10px;
 	border-radius: 8px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--color-border-light);
 	font-size: 1rem;
 	margin-right: 10px;
 }
 
 input:focus {
 	outline: none;
-	border-color: rgb(110, 69, 138);
+	border-color: var(--color-primary);
 }
 
 .game-board {
 	display: grid;
 	grid-template-columns: repeat(4, 120px);
 	grid-template-rows: repeat(4, 120px);
-	gap: 1rem;
+	gap: 0.5rem;
 	margin-bottom: 40px;
 }
 
@@ -133,13 +158,13 @@ input:focus {
 }
 
 .card-front {
-	background: linear-gradient(50deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+	background: var(--gradient-card);
 }
 
 .card-back {
 	transform: rotateY(180deg);
-	background: #f4eeee;
-	border: 1px solid black;
+	background: var(--color-card-back);
+	border: 1px solid var(--color-border);
 }
 
 .card img {
@@ -155,7 +180,7 @@ input:focus {
 }
 
 .info-box {
-	background: white;
+	background: var(--color-surface);
 	padding: 10px 20px;
 	border-radius: 8px;
 	min-width: 100px;
@@ -173,7 +198,7 @@ input:focus {
 }
 
 .rules-content {
-	background: white;
+	background: var(--color-surface);
 	padding: 30px;
 	border-radius: 10px;
 	max-width: 400px;
@@ -184,7 +209,7 @@ input:focus {
 }
 
 .rules-content h2 {
-	color: rgb(110, 69, 138);
+	color: var(--color-primary);
 }
 
 .rules-info {
@@ -208,9 +233,9 @@ input:focus {
 }
 
 .end-screen {
-	border: 1px solid black;
+	border: 1px solid var(--color-border);
 	border-radius: 10px;
-	background-color: white;
+	background-color: var(--color-surface);
 	padding: 2rem;
 	margin: 2rem;
 	margin-top: 2rem;
@@ -240,14 +265,14 @@ input:focus {
 
 #welcome-message {
 	font-size: 1.5rem;
-	color: rgb(110, 69, 138);
+	color: var(--color-primary);
 	margin-bottom: 1.5rem;
 	text-align: center;
 }
 
 #end-message {
 	font-size: 2rem;
-	color: rgb(110, 69, 138);
+	color: var(--color-primary);
 }
 
 #moves,
@@ -255,18 +280,18 @@ input:focus {
 #score {
 	font-weight: bold;
 	font-size: 1.2rem;
-	color: rgb(17, 97, 121);
+	color: var(--color-secondary);
 }
 
 #score.low-score {
-	color: red;
+	color: var(--color-danger);
 	font-weight: bold;
 }
 
 #final-score,
 #final-moves,
 #final-misses {
-	color: rgb(110, 69, 138);
+	color: var(--color-primary);
 	font-weight: 900;
 	font-size: 1.3rem;
 }

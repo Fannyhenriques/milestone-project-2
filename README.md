@@ -13,6 +13,7 @@ The scoring system starts each game at 100 points, with 5 points subtracted for 
    - [Target Audience](#target-audience)
    - [User Stories](#user-stories)
      - [Player Goals](#player-goals)
+     - [Game flow goals](#game-flow-goals)
 2. [Design](#design)
    - [Responsive Design](#responsive-design)
    - [Layout](#layout)
