@@ -51,8 +51,61 @@ At the same time, the scoring system (losing points for incorrect matches) adds 
 
 ## User Stories
 
+### User Experience Goals
+The main goal of the game is to provide a simple, intuitive, and playful experience.
+The design focuses on clarity and ease of use, while still offering a small level of challenge through scoring and memory-based gameplay.
+
 ### Player Goals
 
+As a player I want to: 
+- Quickly understand how the game works
+- Start the game easily and without friction
+- Play in a clean and non-distracting interface
+- Be able to access rules or instructions at any time
+- Track performance through moves, misses, and score
+- Feel motivated through visual feedback (e.g. score changes)
+- Improve memory and achieve a higher score
+- Replay the game to try to perform better
+- Allow a new player to start a fresh game
+
+### Game flow goals
+
+The following describes how the user moves through the game and interacts with it.
+
+1. Start Screen
+- User enters their name
+- User clicks the start button
+
+2. Game Begins
+- Cards are shuffled and displayed face down
+- Score, moves, and misses are visible
+- Score starts at 100 points
+
+3.  Gameplay Interaction
+- User clicks one card → it flips
+- User clicks a second card → it flips
+
+3. Matching Logic
+- If cards match → they stay visible
+- If cards do not match → they flip back and the user loses five points
+
+4. Ongoing Feedback
+- Moves, misses, and score update continuously
+- Score changes color when it becomes low
+- User can open rules at any time
+
+5. Game End
+- All pairs are matched
+- Game board disappears
+- End screen appears showing:
+    * Final score
+    * Total moves
+    * Total misses
+
+6. Next Actions
+- User can choose to:
+    * “Play Again” (same player)
+    * “New Game” (return to start screen)
 
 ---
 
