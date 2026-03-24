@@ -15,10 +15,10 @@ The scoring system starts each game at 100 points, with 5 points subtracted for 
      - [Player Goals](#player-goals)
      - [Game flow goals](#game-flow-goals)
 2. [Design](#design)
-   - [Responsive Design](#responsive-design)
    - [Layout](#layout)
    - [Colour Scheme](#colour-scheme)
    - [Typography](#typography)
+   - [Responsive Design](#responsive-design)
 3. [Features](#features)
    - [Current Features](#current-features)
      - [Game Mechanics](#game-mechanics)
@@ -112,8 +112,6 @@ The following describes how the user moves through the game and interacts with i
 
 ## Design
 
-### Responsive Design
-
 ### Layout
 
 
@@ -121,6 +119,10 @@ The following describes how the user moves through the game and interacts with i
 
 
 ### Typography
+
+
+### Responsive Design
+
  
 
 ---
