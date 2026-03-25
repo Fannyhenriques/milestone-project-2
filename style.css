@@ -8,7 +8,7 @@
 
 	/* Game feel */
 	--color-primary: rgb(110, 69, 138);
-	--color-secondary: rgb(17, 97, 121);
+	--color-secondary: rgb(57, 90, 110);
 
 	/* Feedback */
 	--color-danger: #e63946;
@@ -16,7 +16,7 @@
 	/* Gradients */
 	--gradient-title: linear-gradient(to right,
 			rgb(241, 46, 192) 0%,
-			rgb(17, 97, 121) 100%);
+			rgb(57, 90, 110) 100%);
 
 	--gradient-card: linear-gradient(50deg,
 			rgba(238, 174, 202, 1) 0%,
@@ -50,7 +50,7 @@ h1 {
 	-webkit-text-fill-color: transparent;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 425px) {
 	h1 {
 		font-size: 2.5rem;
 		letter-spacing: 1px;
@@ -77,8 +77,15 @@ h2 {
 }
 
 p {
-	font-size: 1.2rem;
-	line-height: 1.6;
+	font-size: 1rem;
+	line-height: 1.1;
+}
+
+@media (min-width: 576px) {
+	p {
+		font-size: 1.2rem;
+		line-height: 1.6;
+	}
 }
 
 header {
@@ -107,12 +114,12 @@ nav {
 }
 
 .logo {
-	height: 1.5rem;
-	width: 1.5rem;
+	height: 1.7rem;
+	width: 1.7rem;
 	transition: transform 0.3s ease;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 425px) {
 	.logo {
 		height: 2rem;
 		width: 2rem;
@@ -139,9 +146,12 @@ nav {
 }
 
 .btn-rules {
-	padding: 8px 4px;
+	padding: 6px 3px;
 	font-size: 0.75rem;
+	background-color: var(--color-secondary);
+	color: var(--color-surface);
 }
+
 
 @media (min-width: 576px) {
 	.btn-rules {
@@ -160,6 +170,12 @@ nav {
 	border: 1px solid var(--color-border);
 	color: var(--color-background);
 }
+
+.btn-rules:hover {
+	color: var(--color-border);
+	background-color: var(--color-surface);
+}
+
 
 .start-section {
 	display: flex;
@@ -266,7 +282,6 @@ input:focus {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 2rem;
 }
 
 .card-front {
