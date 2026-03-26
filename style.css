@@ -11,7 +11,9 @@
 	--color-secondary: rgb(57, 90, 110);
 
 	/* Feedback */
-	--color-danger: #e63946;
+	--color-danger: #db0303;
+	--color-trouble: #ee4f05;
+	--color-vigilant: #e96406;
 
 	/* Gradients */
 	--gradient-title: linear-gradient(to right,
@@ -348,26 +350,27 @@ input:focus {
 #moves,
 #misses,
 #score {
-	font-weight: bold;
 	font-size: 1rem;
 	color: var(--color-secondary);
 }
 
-@media (min-width: 480px) {
-
-	#moves,
-	#misses,
-	#score {
-		font-size: 1.2rem;
-	}
-}
-
-
 #score.low-score {
 	color: var(--color-danger);
 	font-weight: bold;
+	font-size: 1.4rem;
 }
 
+#score.medium-score {
+	color: var(--color-trouble);
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+
+#score.moderate-score {
+	color: var(--color-vigilant);
+	font-weight: bold;
+	font-size: 1.2rem;
+}
 .rules-modal {
 	position: fixed;
 	inset: 0;

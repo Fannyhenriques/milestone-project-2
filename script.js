@@ -277,13 +277,13 @@ function createConfettiBurst() {
 function updateScoreUI() {
 	scoreEl.innerText = score;
 
-	scoreEl.classList.remove("low-score", "medium-score", "high-score");
+	scoreEl.classList.remove("low-score", "medium-score", "moderate-score");
 
-	if (score < 50) {
+	if (score < 30) {
 		scoreEl.classList.add("low-score");
-	} else if (score < 80) {
+	} else if (score < 50) {
 		scoreEl.classList.add("medium-score");
-	} else {
-		scoreEl.classList.add("high-score");
+	} else if (score < 70) {
+		scoreEl.classList.add("moderate-score");
 	}
 }
