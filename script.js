@@ -79,6 +79,8 @@ function resetGameData() {
 	movesEl.innerText = moves;
 	missesEl.innerText = misses;
 	scoreEl.innerText = score;
+
+	updateScoreUI();
 };
 
 //fetching cards from jsonfile 
@@ -164,9 +166,8 @@ function checkMatch() {
 		misses++;
 		score -= 5;
 		missesEl.innerText = misses;
-		scoreEl.innerText = score;
 
-		scoreEl.classList.toggle("low-score", score < 50);
+		updateScoreUI();
 
 		lockBoard = true;
 		setTimeout(() => {
@@ -225,6 +226,8 @@ function newGame() {
 	startSection.classList.remove("hidden");
 
 	document.getElementById("player-name").value = "";
+
+	resetGameData()
 }
 
 newGameBtn.addEventListener("click", newGame);
@@ -271,3 +274,16 @@ function createConfettiBurst() {
 	}
 }
 
+function updateScoreUI() {
+	scoreEl.innerText = score;
+
+	scoreEl.classList.remove("low-score", "medium-score", "high-score");
+
+	if (score < 50) {
+		scoreEl.classList.add("low-score");
+	} else if (score < 80) {
+		scoreEl.classList.add("medium-score");
+	} else {
+		scoreEl.classList.add("high-score");
+	}
+}
