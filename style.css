@@ -109,13 +109,7 @@ nav {
 	height: 4rem;
 }
 
-@media (min-width: 576px) {
-	nav {
-		gap: 4rem;
-	}
-}
-
-.logo {
+.project-info {
 	height: 1.7rem;
 	width: 1.7rem;
 	transition: transform 0.3s ease;
