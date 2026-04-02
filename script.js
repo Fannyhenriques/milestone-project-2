@@ -23,7 +23,7 @@ const rulesBtn = document.getElementById("rules-btn");
 const rulesModal = document.getElementById("rules-modal");
 const closeRulesBtn = document.getElementById("close-rules-btn");
 
-// global variables
+// 1. GLOBAL VARIABLES / STATE
 let playerName = "";
 
 let moves = 0;
@@ -37,6 +37,9 @@ let lockBoard = false; //lock board, should not be able to pick more than two ca
 let cards = [];
 
 let matches = 0;
+
+
+// EVENT LISTENERS
 
 
 // fetching name before starting the game
@@ -67,7 +70,7 @@ function startGame(name) {
 
 	const shuffledCards = shuffleCards(cards);
 	renderGameBoard(shuffledCards);
-};
+}
 
 // resets the scoreboard
 function resetGameData() {
@@ -81,16 +84,23 @@ function resetGameData() {
 	scoreEl.innerText = score;
 
 	updateScoreUI();
-};
+}
 
 //fetching cards from jsonfile 
 fetch("assets/data/cards.json")
-	.then((res) => res.json())
+	.then((res) => {
+		if (!res.ok) {
+			throw new Error("404 or server error");
+		}
+		return res.json();
+	})
 	.then((data) => {
 		cards = data;
-		console.log("Cards loaded:", cards);
 	})
-	.catch((err) => console.error("Failed to load cards:", err));
+	.catch((err) => {
+		console.error("Failed to load cards:", err);
+		gameBoard.innerText = "Something went wrong. Please try again later.";
+	});
 
 function shuffleCards(cardArray) {
 	const doubled = [...cardArray, ...cardArray]; // create pairs for cards
@@ -144,7 +154,7 @@ function flipCard(card) {
 	movesEl.innerText = moves;
 
 	checkMatch();
-};
+}
 
 //check if cards are matching
 function checkMatch() {
@@ -208,6 +218,8 @@ function restartGame() {
 	gameInfo.classList.remove("hidden");
 	welcomeMessage.classList.remove("hidden");
 
+	document.body.classList.remove("fail-background");
+
 	resetGameData();
 
 	const shuffledCards = shuffleCards(cards);
@@ -224,10 +236,11 @@ function newGame() {
 	welcomeMessage.classList.add("hidden");
 
 	startSection.classList.remove("hidden");
+	document.body.classList.remove("fail-background");
 
 	document.getElementById("player-name").value = "";
 
-	resetGameData()
+	resetGameData();
 }
 
 newGameBtn.addEventListener("click", newGame);
