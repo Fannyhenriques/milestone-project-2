@@ -12,8 +12,10 @@
 
 	/* Feedback */
 	--color-danger: #db0303;
-	--color-trouble: #ee4f05;
-	--color-vigilant: #e96406;
+	--color-trouble: #d74704;
+	/* c2410c */
+	--color-vigilant: #b45309;
+	/* b45309 */
 
 	/* Gradients */
 	--gradient-title: linear-gradient(to right,
@@ -254,6 +256,7 @@ input:focus {
 	align-items: center;
 	justify-content: center;
 	perspective: 1000px;
+	transition: transform 0.2s ease;
 }
 
 .card-inner {
@@ -404,6 +407,7 @@ input:focus {
 
 .rules-content h2 {
 	color: var(--color-primary);
+	text-transform: uppercase;
 }
 
 .rules-info {
@@ -414,7 +418,24 @@ input:focus {
 	text-align: left;
 }
 
-@keyframes popup {
+.rules-green,
+.rules-orange,
+.rules-red {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.rules-green {
+	color: var(--color-secondary);
+}
+
+.rules-orange {
+	color: var(--color-trouble);
+}
+
+.rules-red {
+	color: var(--color-danger);
+}
 	from {
 		transform: scale(0.8);
 		opacity: 0;
