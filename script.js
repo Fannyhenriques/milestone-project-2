@@ -302,6 +302,25 @@ function createConfettiBurst() {
 	}
 }
 
+function createRainFail() {
+	const numberOfDrops = 100;
+	for (let i = 0; i < numberOfDrops; i++) {
+		const drop = document.createElement("div");
+		drop.classList.add("rain-drop");
+		drop.style.left = Math.random() * window.innerWidth + "px";
+
+		drop.style.animationDuration = 1.5 + Math.random() * 1.5 + "s";
+
+		drop.style.animationDelay = Math.random() * 1.5 + "s";
+		drop.style.width = 2 + Math.random() * 4 + "px";
+		drop.style.height = 15 + Math.random() * 15 + "px";
+
+		document.body.appendChild(drop);
+
+		setTimeout(() => drop.remove(), 4000);
+	}
+}
+
 function updateScoreUI() {
 	scoreEl.innerText = score;
 
