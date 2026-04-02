@@ -163,13 +163,18 @@ function checkMatch() {
 	if (isMatch) {
 		matches++;
 
-		firstCard.removeEventListener("click", flipCard);
-		secondCard.removeEventListener("click", flipCard);
+		const card1 = firstCard;
+		const card2 = secondCard;
+
+		setTimeout(() => {
+			card1.classList.add("matched");
+			card2.classList.add("matched");
+		}, 500);
 
 		resetFlippedCards();
 
 		if (matches === cards.length) {
-			setTimeout(endGame, 500);
+			setTimeout(() => endGame(true), 500);
 		}
 
 	} else {
