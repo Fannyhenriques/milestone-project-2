@@ -179,6 +179,11 @@ function checkMatch() {
 
 		updateScoreUI();
 
+		if (score <= 0) {
+			score = 0;
+			endGame(false);
+		}
+
 		lockBoard = true;
 		setTimeout(() => {
 			firstCard.classList.remove("flipped");
@@ -194,20 +199,30 @@ function resetFlippedCards() {
 	lockBoard = false;
 }
 
-function endGame() {
-	gameBoard.classList.add("hidden");
-	gameInfo.classList.add("hidden");
-	welcomeMessage.classList.add("hidden");
+function endGame(isWin = true) {
+	setTimeout(() => {
+		gameBoard.classList.add("hidden");
+		gameInfo.classList.add("hidden");
+		welcomeMessage.classList.add("hidden");
 
-	endScreen.classList.remove("hidden");
+		endScreen.classList.remove("hidden");
 
-	endMessage.innerText = `🎉 Well done ${playerName}! 🎉`;
+		if (isWin) {
+			endMessage.innerText = `🎉 Well done ${playerName}! 🎉`;
+			finalScore.innerText = `You scored: ${score}`;
+			finalMoves.innerText = `Your total moves: ${moves}`;
+			finalMisses.innerText = `Your misses: ${misses}`;
+			createConfettiBurst();
+		} else {
+			endMessage.innerText = `😢 Oh no ${playerName}! You ran out of points. Try again!`;
+			createRainFail();
+			document.body.classList.add("fail-background");
 
-	finalScore.innerText = `You scored: ${score}`;
-	finalMoves.innerText = `Your total moves: ${moves}`;
-	finalMisses.innerText = `Your misses: ${misses}`;
-
-	createConfettiBurst();
+			finalScore.innerText = ""; //this fixed bug where prev points where added to "lose-message"
+			finalMoves.innerText = "";
+			finalMisses.innerText = "";
+		}
+	}, 1000);
 }
 
 function restartGame() {
