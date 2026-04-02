@@ -527,13 +527,7 @@ input:focus {
 	}
 }
 
-.hidden {
-	display: none;
-}
-
-footer {
-	margin-top: auto;
-	width: 100%;
-	height: 4rem;
-	color: var(--color-background);
+body.fail-background {
+	background-color: #989898;
+	transition: background-color 1s ease;
 }
