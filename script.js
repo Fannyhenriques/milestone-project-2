@@ -56,7 +56,7 @@ startForm.addEventListener("submit", (e) => {
 });
 
 // function for handeling UI and start game
-function startGame(name) {
+const startGame = (name) => {
 	playerName = name;
 	// hide the start-section
 	startSection.classList.add("hidden");
@@ -75,7 +75,7 @@ function startGame(name) {
 }
 
 // resets the scoreboard
-function resetGameData() {
+const resetGameData = () => {
 	moves = 0;
 	misses = 0;
 	score = 100;
@@ -104,7 +104,7 @@ fetch("assets/data/cards.json")
 		gameBoard.innerText = "Something went wrong. Please try again later.";
 	});
 
-function shuffleCards(cardArray) {
+const shuffleCards = (cardArray) => {
 	const halfA = [...cardArray];
 	const halfB = [...cardArray];
 
@@ -148,7 +148,7 @@ function shuffleCards(cardArray) {
 	return shuffledDeck;
 }
 
-function renderGameBoard(cardsArray) {
+const renderGameBoard = (cardsArray) => {
 	gameBoard.innerHTML = "";
 
 	cardsArray.forEach(card => {
@@ -179,7 +179,7 @@ function renderGameBoard(cardsArray) {
 	});
 }
 
-function flipCard(card) {
+const flipCard = (card) => {
 	if (lockBoard || card.classList.contains("flipped")) return;
 	// if board is locked or if card is flipped, do nothing, otherwise trigger flip card animation:
 	card.classList.add("flipped");
@@ -197,7 +197,7 @@ function flipCard(card) {
 }
 
 //check if cards are matching
-function checkMatch() {
+const checkMatch = () => {
 	const isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
 	if (isMatch) {
@@ -239,12 +239,12 @@ function checkMatch() {
 }
 
 // helper function to reset selected cards and unlock board
-function resetFlippedCards() {
+const resetFlippedCards = () => {
 	[firstCard, secondCard] = [null, null];
 	lockBoard = false;
 }
 
-function endGame(isWin = true) {
+const endGame = (isWin = true) => {
 	setTimeout(() => {
 		gameBoard.classList.add("hidden");
 		gameInfo.classList.add("hidden");
@@ -270,7 +270,7 @@ function endGame(isWin = true) {
 	}, 1000);
 }
 
-function restartGame() {
+const restartGame = () => {
 
 	endScreen.classList.add("hidden");
 
@@ -288,7 +288,7 @@ function restartGame() {
 
 playAgainBtn.addEventListener("click", restartGame);
 
-function newGame() {
+const newGame = () => {
 
 	endScreen.classList.add("hidden");
 	gameBoard.classList.add("hidden");
@@ -328,7 +328,7 @@ document.querySelectorAll(".close-btn").forEach(btn => {
 	});
 });
 
-function createConfettiBurst() {
+const createConfettiBurst = () => {
 	for (let i = 0; i < 60; i++) {
 		const confetti = document.createElement("div");
 		confetti.classList.add("confetti");
@@ -355,7 +355,7 @@ function createConfettiBurst() {
 	}
 }
 
-function createRainFail() {
+const createRainFail = () => {
 	const numberOfDrops = 100;
 	for (let i = 0; i < numberOfDrops; i++) {
 		const drop = document.createElement("div");
@@ -374,7 +374,7 @@ function createRainFail() {
 	}
 }
 
-function updateScoreUI() {
+const updateScoreUI = () => {
 	scoreEl.innerText = score;
 
 	scoreEl.classList.remove("low-score", "medium-score", "moderate-score");
