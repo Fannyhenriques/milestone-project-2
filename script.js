@@ -105,10 +105,48 @@ fetch("assets/data/cards.json")
 	});
 
 function shuffleCards(cardArray) {
-	const doubled = [...cardArray, ...cardArray]; // create pairs for cards
-	//sort the array of cards, shuffles order - maybe change later to something better?
-	return doubled.sort(() => Math.random() - 0.5);
-};
+	const halfA = [...cardArray];
+	const halfB = [...cardArray];
+
+	// Fisher–Yates shuffle
+	const shuffle = arr => {
+		for (let i = arr.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[arr[i], arr[j]] = [arr[j], arr[i]];
+		}
+	};
+
+	shuffle(halfA);
+	shuffle(halfB);
+
+	const startWithA = Math.random() < 0.5;
+	const shuffledDeck = [];
+	for (let i = 0; i < halfA.length; i++) {
+		if (startWithA) {
+			shuffledDeck.push(halfA[i], halfB[i]);
+		} else {
+			shuffledDeck.push(halfB[i], halfA[i]);
+		}
+	}
+
+	const len = shuffledDeck.length;
+	for (let n = 0; n < len; n++) {
+		const i = Math.floor(Math.random() * len);
+		const j = Math.floor(Math.random() * len);
+		if (
+			i !== j &&
+			shuffledDeck[i] !== shuffledDeck[j] &&
+			shuffledDeck[i] !== shuffledDeck[j - 1] &&
+			shuffledDeck[i] !== shuffledDeck[j + 1] &&
+			shuffledDeck[j] !== shuffledDeck[i - 1] &&
+			shuffledDeck[j] !== shuffledDeck[i + 1]
+		) {
+			[shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
+		}
+	}
+
+	return shuffledDeck;
+}
 
 function renderGameBoard(cardsArray) {
 	gameBoard.innerHTML = "";
