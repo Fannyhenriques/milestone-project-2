@@ -253,6 +253,15 @@ button:focus,
 	object-fit: contain;
 }
 
+.card.matched .card-back {
+	background: #e0fceb;
+}
+
+.card:hover,
+.card:focus {
+	transform: scale(1.03);
+}
+
 /* =====================
    GAME INFO / SCOREBOARD
 ===================== */
