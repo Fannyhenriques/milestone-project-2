@@ -21,7 +21,9 @@ const newGameBtn = document.getElementById("new-game-btn");
 //popup
 const rulesBtn = document.getElementById("rules-btn");
 const rulesModal = document.getElementById("rules-modal");
-const closeRulesBtn = document.getElementById("close-rules-btn");
+const logoBtn = document.getElementById("logo-btn");
+const gameInfoModal = document.getElementById("game-info-modal");
+
 
 // 1. GLOBAL VARIABLES / STATE
 let playerName = "";
@@ -265,19 +267,27 @@ function newGame() {
 
 newGameBtn.addEventListener("click", newGame);
 
+logoBtn.addEventListener("click", () => {
+	gameInfoModal.classList.remove("hidden");
+});
+
 rulesBtn.addEventListener("click", () => {
 	rulesModal.classList.remove("hidden");
 });
 
-closeRulesBtn.addEventListener("click", () => {
-	rulesModal.classList.add("hidden");
-	console.log("clicked")
+
+document.querySelectorAll(".close-btn").forEach(btn => {
+	btn.addEventListener("click", () => {
+		btn.closest(".rules-modal").classList.add("hidden");
+	});
 });
 
-rulesModal.addEventListener("click", (e) => {
-	if (e.target === rulesModal) {
-		rulesModal.classList.add("hidden");
-	}
+[rulesModal, gameInfoModal].forEach(modal => {
+	modal.addEventListener("click", (e) => {
+		if (e.target === modal) {
+			modal.classList.add("hidden");
+		}
+	});
 });
 
 function createConfettiBurst() {

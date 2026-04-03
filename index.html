@@ -26,9 +26,29 @@
 		</nav>
 	</header>
 
-	<section id="rules-modal" class="rules-modal hidden">
+	<section id="game-info-modal" class="rules-modal hidden">
 		<div class="rules-content">
-			<h2>Game Rules</h2>
+			<h2>
+				Memory Match
+			</h2>
+			<div id="game-info-text" class="rules-info">
+				<p>
+					This memory game was made for a school project at Code Institute during Spring 2026.</p>
+				<p>
+					It is built using HTML, CSS, and
+					JavaScript, and demonstrates basic interactive features such as card matching, scoring, and end-of-game
+					messages.
+				</p>
+				<p>
+					Developed by Fanny Henriques.
+				</p>
+			</div>
+			<button class="btn close-btn">Close</button>
+		</div>
+	</section>
+	<section id="rules-modal" class="rules-modal hidden" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+		<div class="rules-content">
+			<h2 id="rules-title">Game Rules </h2>
 			<div class="rules-info">
 				<p>
 					Test your memory by flipping two cards at a time to find matching pairs.
@@ -56,7 +76,7 @@
 					Try to keep your score as high as possible!
 				</p>
 			</div>
-			<button id="close-rules-btn" class="btn">Close</button>
+			<button class="btn close-btn">Close</button>
 		</div>
 	</section>
 

@@ -448,6 +448,10 @@ input:focus {
 .rules-red {
 	color: var(--color-danger);
 }
+
+.close-btn {
+	margin: 1rem;
+}
 	from {
 		transform: scale(0.8);
 		opacity: 0;
