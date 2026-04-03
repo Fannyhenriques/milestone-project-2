@@ -148,6 +148,11 @@ const shuffleCards = (cardArray) => {
 	return shuffledDeck;
 }
 
+const handleCardClick = (e) => {
+	const card = e.currentTarget;
+	flipCard(card);
+};
+
 const renderGameBoard = (cardsArray) => {
 	gameBoard.innerHTML = "";
 
@@ -175,7 +180,7 @@ const renderGameBoard = (cardsArray) => {
 		cardElement.appendChild(cardInner);
 		gameBoard.appendChild(cardElement);
 
-		cardElement.addEventListener("click", () => flipCard(cardElement));
+		cardElement.addEventListener("click", handleCardClick);
 	});
 }
 
