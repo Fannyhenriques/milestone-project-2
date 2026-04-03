@@ -85,13 +85,15 @@
 			<h2>Enter your name</h2>
 
 			<form id="start-form" class="start-form">
-				<input type="text" id="player-name" placeholder="Your name" required minlength="2">
+				<label for="player-name" class="visually-hidden">Your name</label>
+				<input type="text" id="player-name" aria-labelledby="name-heading" placeholder="Your name" required
+					minlength="2">
 				<button type="submit" class="btn">Start Game</button>
 			</form>
 
 		</section>
 
-		<h2 id="welcome-message" class="hidden"></h2>
+		<h2 id="welcome-message" class="hidden" aria-live="polite"></h2>
 		<section class="game-board hidden">
 
 		</section>
@@ -99,17 +101,17 @@
 		<section class="game-info hidden" id="game-info">
 			<div class="info-box">
 				<span>Moves:</span>
-				<span id="moves"></span>
+				<span id="moves">0</span>
 			</div>
 
 			<div class="info-box">
 				<span>Misses:</span>
-				<span id="misses"></span>
+				<span id="misses">0</span>
 			</div>
 
 			<div class="info-box">
 				<span>Score:</span>
-				<span id="score"></span>
+				<span id="score">0</span>
 			</div>
 		</section>
 		<section id="end-screen" class="end-screen hidden">
