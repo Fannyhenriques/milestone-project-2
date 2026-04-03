@@ -48,7 +48,7 @@ let matches = 0;
 startForm.addEventListener("submit", (e) => {
 	e.preventDefault(); //preventing page reload
 
-	const playerName = document.getElementById("player-name").value.trim();
+	playerName = document.getElementById("player-name").value.trim();
 
 	if (playerName.length < 2) return;
 
