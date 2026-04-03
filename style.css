@@ -498,6 +498,14 @@ footer {
 	}
 }
 
+/* Confetti burst (used in JS) */
+@keyframes burst {
+	to {
+		transform: translate(var(--x), var(--y)) rotate(720deg);
+		opacity: 0;
+	}
+}
+
 /* =====================
    UTILITIES
 ===================== */
