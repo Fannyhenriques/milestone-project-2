@@ -119,6 +119,13 @@ footer {
 	background-color: var(--color-surface);
 	border: 1px solid var(--color-border);
 	font-size: 1rem;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: var(--color-secondary);
+	border: 1px solid var(--color-border);
+	color: var(--color-background);
 }
 
 .btn-rules {
@@ -131,6 +138,28 @@ footer {
 .btn-rules:hover {
 	color: var(--color-border);
 	background-color: var(--color-surface);
+}
+
+.btn:active {
+	transform: scale(0.97);
+}
+
+input {
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid var(--color-border-light);
+	font-size: 1rem;
+}
+
+input:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+button:focus,
+.card:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
 }
 
 /* =====================
