@@ -380,6 +380,16 @@ const j = Math.floor(Math.random() * (i + 1)); `<br>`
 
 This layered approach ensures a balanced distribution of cards while maintaining a high level of randomness, resulting in a more engaging gameplay experience.
 
+#### Rendering Cards
+Once the card data has been fetched and shuffled, the game board is dynamically generated using JavaScript.
+
+- Each card is created as a set of nested DOM elements representing the front and back sides. 
+- The card’s identity is stored using a data attribute, making it easy to compare cards later in the game logic.
+- For every card in the shuffled array, a new card element is constructed and appended to the game board. 
+- An event listener is also attached to each card, allowing it to respond to user interaction by triggering the flip behavior.
+
+By generating the cards dynamically instead of hardcoding them in HTML, the game becomes more flexible and scalable, making it easier to update or expand in the future.
+
 
 ### Future Features
 
