@@ -216,16 +216,21 @@ The colorful and friendly design of the icons contributes to a playful user expe
 </div>
 
 ### Responsive Design
+The responsive design ensures that the gameboard, scoreboard, and rules modal are displayed correctly across different devices, so the interface never interferes with gameplay. This project follows a mobile-first approach, where the game grid grows with the screen size.
 
- 
+The scoreboard is stacked vertically on mobile and small tablets, and displayed in a row on larger tablets and desktop screens. To achieve a consistent layout across devices, both standard breakpoints and custom breakpoints were used:
 
----
+| Breakpoint     | Main Changes                                                                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 425px          | Slightly larger H1 font and icons; gameboard cards grow from 70px → 90px.                                                                          |
+| 480px          | Scoreboard info boxes and end-screen text increase in size; improved readability.                                                                  |
+| 525px          | Gameboard cards grow to 100px with increased gaps; scoreboard switches from vertical stacking to horizontal layout.                                |
+| 576px          | Typography scales up (H1, H2, paragraphs); header margins and nav gaps increase; start form switches to row layout; buttons and modal text larger. |
+| 640px          | Gameboard cards grow to 120px; rules modal max-width increased for better display on tablets.                                                      |                                                                      |
+| 1200px         | Gameboard cards expand to 130px; scoreboard gaps increase for desktop; overall layout more spacious.                                               |
 
-## Features
 
-### Current Features
-
-#### Game Mechanics
+The modals (popups) for rules and game info are scrollable and aligned at the top on smaller screens. On taller screens (above 700px in height), modals are centered vertically for a better visual experience.
 
 
 ### Future Features

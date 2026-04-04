@@ -17,9 +17,8 @@
 	/* Feedback */
 	--color-danger: #db0303;
 	--color-trouble: #d74704;
-	/* c2410c */
 	--color-vigilant: #b45309;
-	/* b45309 */
+	--color-match: #e0fceb;
 
 	/* Gradients */
 	--gradient-title: linear-gradient(to right,
@@ -254,7 +253,7 @@ button:focus,
 }
 
 .card.matched .card-back {
-	background: #e0fceb;
+	background: var(--color-match);
 }
 
 .card:hover,
