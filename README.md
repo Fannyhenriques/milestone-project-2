@@ -383,7 +383,7 @@ Visual feedback plays an important role in guiding the user:
 - Hovering over a card slightly scales it up to indicate interactivity, while clicking (or focusing) triggers the flip effect, revealing the card’s content.
 
 <div align="center">
-<img src="/assets/documentation/flip-nomatch.png" width="300">
+<img src="/assets/documentation/flip-nomatch.png" width="400">
 </div>
 
 - The flip behavior is controlled through JavaScript by toggling a flipped class on the selected card. 
@@ -401,7 +401,7 @@ The comparison is handled in the checkMatch() function, where the values of the 
 If the cards match, they remain flipped, and a visual indicator is applied by adding a matched class, changing their appearance (light green) to signal success. The match counter is also increased, bringing the player closer to completing the game.
 
 <div align="center">
-<img src="/assets/documentation/flip-match.png" width="300">
+<img src="/assets/documentation/flip-match.png" width="400">
 </div>
 
 If the cards do not match, the game registers a miss. The score is reduced, and after a short delay, both cards are flipped back to their original state. During this delay, the board is temporarily locked to prevent additional interactions, ensuring that only two cards can be evaluated at a time.
@@ -436,12 +436,12 @@ It consists of three main variables:
 
 Desktop: 
 <div align="center">
-<img src="/assets/documentation/scoreboard-desktop.png" width="300">
+<img src="/assets/documentation/scoreboard-desktop.png" width="400">
 </div>
 
 Mobile:
 <div align="center">
-<img src="/assets/documentation/scoreboard-mobile.png" width="300">
+<img src="/assets/documentation/scoreboard-mobile.png" width="400">
 </div>
 
 These variables are dynamically updated in the UI using the corresponding DOM elements (movesEl, missesEl, scoreEl). 
@@ -452,23 +452,39 @@ To enhance feedback, the score element changes color at certain thresholds:
 Moderate score (70–50):
 
 <div align="center">
-<img src="/assets/documentation/score-moderate.png" width="300">
+<img src="/assets/documentation/score-moderate.png" width="400">
 </div>
 
 Medium score (50–30)
 
 <div align="center">
-<img src="/assets/documentation/score-medium.png" width="300">
+<img src="/assets/documentation/score-medium.png" width="400">
 </div>
 
 Low score (<30)
 
 <div align="center">
-<img src="/assets/documentation/score-low.png" width="300">
+<img src="/assets/documentation/score-low.png" width="400">
 </div>
 
 This visual cue allows players to quickly assess their performance and motivates careful matching. 
 By combining numeric feedback with color indicators, the scoreboard creates an engaging and informative layer of game interaction.
+
+#### End Screen
+When the game ends, the interface transitions from the game board to a dedicated end screen, handled by the endGame() function.
+
+The content and animations depend on the outcome:
+Win scenario
+- The player sees a personalized congratulatory message, e.g., 🎉 Well done [playerName]! 🎉
+- Final statistics are displayed: score, total moves, and misses
+- A confetti burst animation is triggered to visually celebrate the victory
+Lose scenario
+- A different personalized message is shown, e.g., 😢 Oh no [playerName]! You ran out of points. Try again!
+- Score details are hidden to avoid confusion
+- A rain effect combined with a background change reinforces the losing state
+
+These visual and textual cues provide clear feedback to the player, 
+marking the conclusion of the game and encouraging replayability.
 
 
 ### Future Features
