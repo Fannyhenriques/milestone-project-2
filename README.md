@@ -253,8 +253,16 @@ The game mechanics are designed around matching cards, tracking score, moves, an
 The header contains three main elements:
 
 - Logo / Icon – A small image of two cards stacked. On hover, it slightly enlarges to indicate it is clickable. Currently, clicking the logo shows a brief summary of how the game is built; in future versions, it could open a popup with additional information about the game or game settings.
+
+<img src="/assets/documentation/memory-logo.png.png">
+
 - Heading (H1) – Positioned in the center, using the playful gradient font to maintain visual identity.
+
+<img src="/assets/documentation/font-h1.png.png">
+
 - Rules Button – Positioned to the right, styled with the secondary color. On hover, the background turns white, and clicking it opens a modal with the game rules.
+
+<img src="/assets/documentation/rules-btn.png.png">
 
 The header and navigation elements are responsive: they scale up or down depending on screen size, but their layout remains consistent across devices.
 
