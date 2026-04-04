@@ -202,19 +202,21 @@ Overall, the palette was chosen to balance **playfulness** with **clarity**, ens
 <img src="/assets/documentation/feedback-colors.png" width="400">
 </div>
 
+Overall, the palette was chosen to balance **playfulness** with **clarity**, ensuring the game is visually appealing while keeping important information easy to notice.
+
 ### Typography
 Two fonts were chosen to create a balance between readability and playfulness. "Varela" is used for body text and interface elements, providing a simple style that doesn’t distract from gameplay. "Bangers" is used for the H1 heading, giving a fun feel to the logo and main titles. Both fonts were selected from Google Fonts to ensure web compatibility and a consistent look across devices.
 
 Body font: Varela
 
 <div align="center">
-<img src="/assets/documentation/font-body.png">
+<img src="/assets/documentation/font-body.png" width="400">
  </div>
 
 Heading font (H1): Bangers
 
 <div align="center">
-<img src="/assets/documentation/font-h1.png">
+<img src="/assets/documentation/font-h1.png" width="400">
 </div>
 
 ### Icons
@@ -224,6 +226,7 @@ To achieve this, the icons represent a mix of familiar everyday objects—such a
 
 The colorful and friendly design of the icons contributes to a playful user experience, reinforcing the game’s intention to feel enjoyable, simple, and inviting.
 
+<div align="center">
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 400px;">
   <img src="assets/icons/dog.png" width="80">
   <img src="assets/icons/apple.png" width="80">
@@ -234,6 +237,8 @@ The colorful and friendly design of the icons contributes to a playful user expe
   <img src="assets/icons/goggles.png" width="80">
   <img src="assets/icons/sports.png" width="80">
 </div>
+</div>
+
 
 ### Responsive Design
 The responsive design ensures that the gameboard, scoreboard, and rules modal are displayed correctly across different devices, so the interface never interferes with gameplay. This project follows a mobile-first approach, where the game grid grows with the screen size.
@@ -275,19 +280,19 @@ The header contains three main elements:
 - Logo / Icon – A small image of two cards stacked. On hover, it slightly enlarges to indicate it is clickable. Currently, clicking the logo shows a brief summary of how the game is built; in future versions, it could open a popup with additional information about the game or game settings.
 
 <div align="center">
-<img src="/assets/documentation/memory-logo.png">
+<img src="/assets/documentation/memory-logo.png" width="150"> 
 </div>
 
 - Heading (H1) – Positioned in the center, using the playful gradient font to maintain visual identity.
 
 <div align="center">
-<img src="/assets/documentation/font-h1.png">
+<img src="/assets/documentation/font-h1.png" width="250">
 </div>
 
 - Rules Button – Positioned to the right, styled with the secondary color. On hover, the background turns white, and clicking it opens a modal with the game rules.
 
 <div align="center">
-<img src="/assets/documentation/rules-btn.png">
+<img src="/assets/documentation/rules-btn.png" width="150">
 </div>
 
 The header and navigation elements are responsive: they scale up or down depending on screen size, but their layout remains consistent across devices.
@@ -314,7 +319,7 @@ The name is also referenced in the end-of-game message, so the player sees a per
 If the player chooses to play again, the same name is retained, maintaining the personalized experience.
 
 <div align="center">
-<img src="/assets/documentation/welcome-message.png" width="250">
+<img src="/assets/documentation/welcome-message.png" width="300">
 </div>
 
 The form also ensures the game does not start automatically when the page loads, giving more control over gameplay. 
