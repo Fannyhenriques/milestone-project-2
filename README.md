@@ -767,6 +767,16 @@ All core components were verified to maintain a consistent and functional layout
 
 The layout adapts smoothly between mobile, tablet, and desktop views, ensuring a balanced and accessible user experience.
 
+### Lighhouse
+
+Lighthouse testing was performed to evaluate performance, accessibility, best practices, and SEO. A score of 100% was achieved in all categories on the start screen. Additional accessibility checks performed using Silktide. 
+
+<div align="center">
+<img src="/assets/documentation/lighthouse-desktop.png" width="400">
+</div>
+
+Due to the interactive nature of the application and its reliance on JavaScript, full Lighthouse testing across all game states was limited. However, manual testing was used to verify functionality and performance during active gameplay.
+
 
 ---
 
