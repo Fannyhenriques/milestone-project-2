@@ -392,6 +392,22 @@ Visual feedback plays an important role in guiding the user:
 
 This combination of visual feedback and controlled interaction ensures a smooth and intuitive gameplay experience.
 
+#### Matching Logic:
+Once two cards have been flipped, the game evaluates whether they form a matching pair.
+
+Each card stores its identity using a data-name attribute. 
+The comparison is handled in the checkMatch() function, where the values of the two selected cards are checked against each other.
+
+If the cards match, they remain flipped, and a visual indicator is applied by adding a matched class, changing their appearance (light green) to signal success. The match counter is also increased, bringing the player closer to completing the game.
+
+<div align="center">
+<img src="/assets/documentation/flip-match.png" width="300">
+</div>
+
+If the cards do not match, the game registers a miss. The score is reduced, and after a short delay, both cards are flipped back to their original state. During this delay, the board is temporarily locked to prevent additional interactions, ensuring that only two cards can be evaluated at a time.
+
+This logic creates a clear feedback loop for the player, reinforcing successful matches while maintaining challenge through penalties for incorrect guesses.
+
 
 ### Future Features
 
