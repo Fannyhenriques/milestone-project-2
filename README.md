@@ -417,6 +417,15 @@ Ensures the player can continue interacting without unintended behavior
 
 By explicitly resetting the game state after each evaluation, the logic remains predictable and prevents errors such as comparing incorrect cards or blocking further input.
 
+#### Game End Condition
+The game ends under two conditions:
+
+Win: All card pairs have been successfully matched
+Detected in checkMatch() when matches === cards.length
+Loss: The player runs out of points (score reaches zero)
+
+In both cases, the endGame() function is triggered, which transitions the interface from the game board to the end screen.
+
 
 ### Future Features
 
