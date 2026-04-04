@@ -157,9 +157,20 @@ The overall goal was to balance playfulness with clarity, ensuring that importan
 ### Layout
 Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure across different devices.
 
-<img src="/assets/documentation/wireframe-desktop.png"> 
-<img src="/assets/documentation/wireframe-tablet.png"> 
-<img src="/assets/documentation/wireframe-mobile.png">
+<div style="display: flex; justify-content: center; flex-direction: row;">
+<div style="text-align: center; margin: 10px;" >
+	    <strong>Desktop</strong><br>
+<img src="/assets/documentation/wireframe-desktop.png" width="300"> 
+</div>
+  <div style="text-align: center; margin: 10px;">
+	    <strong>Tablet</strong><br>
+<img src="/assets/documentation/wireframe-tablet.png" width="250"> 
+</div>
+  <div style="text-align: center; margin: 10px;">
+    <strong>Mobile</strong><br>
+<img src="/assets/documentation/wireframe-mobile.png" width="200">
+</div>
+</div>
 
 The layout is structured to guide the user through the game in a clear and intuitive way.
 - A header contains the game title, logo, and access to the rules
