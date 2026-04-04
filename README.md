@@ -197,6 +197,23 @@ Heading font (H1): Bangers
 <img src="/assets/documentation/font-h1.png">
 
 
+### Icons
+The icons were selected from the Flaticon library with a focus on clarity, playfulness, and broad recognition. The goal was to create a visual style that feels lighthearted and accessible to players of all ages.
+
+To achieve this, the icons represent a mix of familiar everyday objects—such as a dog, apple, and cupcake—combined with more fun and imaginative elements like a dinosaur and a wizard hat. This balance helps make the game both easy to understand and visually engaging.
+
+The colorful and friendly design of the icons contributes to a playful user experience, reinforcing the game’s intention to feel enjoyable, simple, and inviting.
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 400px;">
+  <img src="assets/icons/dog.png" width="80">
+  <img src="assets/icons/apple.png" width="80">
+  <img src="assets/icons/cupcake.png" width="80">
+  <img src="assets/icons/dinosaur.png" width="80">
+  <img src="assets/icons/wizard-hat.png" width="80">
+  <img src="assets/icons/smiling-face.png" width="80">
+  <img src="assets/icons/goggles.png" width="80">
+  <img src="assets/icons/sports.png" width="80">
+</div>
 
 ### Responsive Design
 
