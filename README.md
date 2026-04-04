@@ -157,7 +157,7 @@ The overall goal was to balance playfulness with clarity, ensuring that importan
 ### Layout
 Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure across different devices.
 
-<div style="display: flex; justify-content: center; flex-direction: row;">
+<div style="display: flex; gap: 10px; align-items: flex-start;"> 
 <div style="text-align: center; margin: 10px;" >
 	    <strong>Desktop</strong><br>
 <img src="/assets/documentation/wireframe-desktop.png" width="300"> 
@@ -195,8 +195,6 @@ The color palette is divided into three groups, each serving a specific purpose:
 </div>
 
 3. **Feedback Colors** – These colors provide visual feedback based on game events. For example, the scoreboard colors gradually change as points decrease, and matched cards briefly turn green to indicate success. This helps players intuitively understand their performance without needing extra text instructions. The cards also get a lightgreen backgroundcolor when matched.
-
-Overall, the palette was chosen to balance **playfulness** with **clarity**, ensuring the game is visually appealing while keeping important information easy to notice.
 
 <div align="center">
 <img src="/assets/documentation/feedback-colors.png" width="400">
@@ -333,7 +331,7 @@ It consists of a grid of 12 cards that players can flip to reveal hidden images.
 The board is implemented as a CSS grid, initially 4×4 cards and is centered on the screen across all devices. 
 
 <div align="center">
-  <div style="display: inline-block; text-align: center; margin-right: 20px;">
+<div style="display: flex; gap: 10px; align-items: flex-start;"> 
     <strong>Mobile</strong><br>
     <img src="/assets/documentation/game-board-mobile.png" width="250">
   </div>
@@ -342,6 +340,10 @@ The board is implemented as a CSS grid, initially 4×4 cards and is centered on 
     <img src="/assets/documentation/game-board-desktop.png" width="300">
   </div>
 </div>
+
+#### Fetching Card-content (Icons)
+The icons were chosen from the [flaticon library](https://www.flaticon.com/) and stored in a local JSON file. 
+When the game starts, they are loaded using a fetch request, which returns a Promise. The code checks the response for errors before parsing it as JSON, and any errors are caught to display a message to the user. I chose a Promise-based fetch instead of async/await because the file is small and local, making this approach simple. However the async/await could also be used to make the execution order even clearer. 
 
 
 ### Future Features
