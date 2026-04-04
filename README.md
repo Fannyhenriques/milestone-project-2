@@ -611,6 +611,15 @@ Tools & Resources
 | **ChatGPT**             | Assistance with understanding and implementing logic                              |
 
 
+---
+
+## Development Process
+
+- MVP
+- sketch of functions
+- ISSUES/CHECKLIST
+---
+
 ## Deployment
 Deployment with GitHub Pages
 
