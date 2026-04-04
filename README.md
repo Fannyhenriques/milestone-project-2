@@ -232,6 +232,15 @@ The scoreboard is stacked vertically on mobile and small tablets, and displayed 
 
 The modals (popups) for rules and game info are scrollable and aligned at the top on smaller screens. On taller screens (above 700px in height), modals are centered vertically for a better visual experience.
 
+### Intuitive Design & User Feedback
+The game is designed to keep the player informed and motivated. Key elements of intuitive design and feedback include:
+
+- Score feedback: The score changes color at set breakpoints (70, 50, 30) to give a clear visual cue of performance.
+- Win/loss animations: Winning triggers a confetti effect; losing triggers rain and a gray background to signal failure.
+- Card interactions: Cards slightly pop up on hover and stay flipped and green when matched, providing visual feedback.
+- Rules accessibility: The rules modal is always available, helping players understand the game mechanics.
+- Responsive feedback placement: Scoreboard, moves, and misses are visible and adapt to different screen sizes.
+
 
 ### Future Features
 
