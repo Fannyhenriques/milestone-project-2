@@ -322,8 +322,8 @@ It consists of a grid of 12 cards that players can flip to reveal hidden images.
 The board is implemented as a CSS grid, initially 4×4 cards and is centered on the screen across all devices. 
 
 <div style="display: flex; flex-direction: row; gap: 10px; align-items: flex-start;"> 
-    <img src="/assets/documentation/game-board-mobile.png" width="250">
-    <img src="/assets/documentation/game-board-desktop.png" width="300">
+    <img src="/assets/documentation/game-board-mobile.png" width="300">
+    <img src="/assets/documentation/game-board-desktop.png" width="350">
 </div>
 
 #### Fetching Card-content (Icons)
@@ -634,8 +634,6 @@ Tools & Resources
 ---
 
 ## Deployment
-Deployment with GitHub Pages
-
 #### Deployment with GitHub Pages
 
 This project is deployed using GitHub Pages, allowing you to access a live version of the website.
@@ -800,7 +798,7 @@ The layout adapts smoothly between mobile, tablet, and desktop views, ensuring a
 Lighthouse testing was performed to evaluate performance, accessibility, best practices, and SEO. A score of 100% was achieved in all categories on the start screen. Additional accessibility checks performed using Silktide. 
 
 <div align="center">
-<img src="/assets/documentation/lighthouse-desktop.png" width="400">
+<img src="/assets/documentation/lighthouse-desktop.png" width="500">
 </div>
 
 Due to the interactive nature of the application and its reliance on JavaScript, full Lighthouse testing across all game states was limited. However, manual testing was used to verify functionality and performance during active gameplay.
