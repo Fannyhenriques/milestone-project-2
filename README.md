@@ -741,6 +741,15 @@ User input validation was also tested. The game prevents submission if the playe
 
 These checks help improve the overall stability of the application and ensure a smoother user experience even when errors occur.
 
+### Performance Testing
+
+Performance testing was conducted to ensure smooth gameplay and responsive interactions throughout the application.
+
+Animations such as card flipping, confetti bursts, and rain effects were tested to ensure they run smoothly without stuttering or delays.
+Gameplay performance was evaluated during extended interaction, confirming that no noticeable lag occurs when flipping cards or updating the game state.
+Special attention was given to DOM management for dynamic elements. Animation elements (such as confetti and rain drops) are removed after completion to prevent unnecessary DOM buildup and potential performance issues.
+
+Overall, the game performs efficiently, providing a seamless and responsive user experience
 
 ### Responsive Testing
 
