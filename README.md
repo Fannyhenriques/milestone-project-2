@@ -572,6 +572,11 @@ Accessibility was considered throughout the development of this project to ensur
 - Sufficient contrast between text and background colors
 - Clear visual feedback (color and size changes) to indicate score changes
 
+#### Future Improvements
+- Full keyboard navigation for the game board
+- More descriptive announcements for card matching and mismatches
+
+#### Footer
 
 ### Future Features
 
