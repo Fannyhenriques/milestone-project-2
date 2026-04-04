@@ -186,6 +186,16 @@ Overall, the palette was chosen to balance **playfulness** with **clarity**, ens
 <img src="/assets/documentation/feedback-colors.png">
 
 ### Typography
+Two fonts were chosen to create a balance between readability and playfulness. "Varela" is used for body text and interface elements, providing a simple style that doesn’t distract from gameplay. "Bangers" is used for the H1 heading, giving a fun feel to the logo and main titles. Both fonts were selected from Google Fonts to ensure web compatibility and a consistent look across devices.
+
+Body font: Varela
+
+<img src="/assets/documentation/font-body.png">
+ 
+Heading font (H1): Bangers
+
+<img src="/assets/documentation/font-h1.png">
+
 
 
 ### Responsive Design
