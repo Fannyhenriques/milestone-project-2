@@ -661,6 +661,21 @@ The site updates automatically after each push.
 
 ### Manual Testing
 
+Each user story was tested to ensure the expected outcome was achieved. See result below:
+
+| User Story                                    | Expected Outcome                                       | Result |
+| --------------------------------------------- | ------------------------------------------------------ | ------ |
+| Quickly understand how the game works         | Clear layout, visible UI, and accessible rules         |  Pass  |
+| Start the game easily and without friction    | User can enter name and start game without issues      |  Pass  |
+| Play in a clean and non-distracting interface | Minimal UI with clear focus on game board              |  Pass  |
+| Access rules or instructions at any time      | Rules modal opens/closes correctly                     |  Pass  |
+| Track performance (moves, misses, score)      | Values update in real-time during gameplay             |  Pass  |
+| Feel motivated through visual feedback        | Score changes color based on thresholds                |  Pass  |
+| Improve memory and achieve a higher score     | Game logic supports repeated play and scoring          |  Pass  |
+| Replay the game to perform better             | “Play Again” restarts game correctly                   |  Pass  |
+| Allow a new player to start fresh             | “New Game” resets all data and returns to start screen |  Pass  |
+
+
 
 ### Responsive Testing
 
