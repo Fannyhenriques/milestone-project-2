@@ -732,6 +732,15 @@ Accessibility was considered to ensure the game is usable for a wide range of us
 
 Accessibility testing was performed manually using browser tools and keyboard navigation.
 
+### Error Handling Testing
+
+Error handling was tested to ensure the game behaves predictably in unexpected situations.
+
+The card data is fetched from a local JSON file using a Promise-based request. Error scenarios were simulated to verify that failed requests are properly caught and handled. In such cases, a fallback message is displayed to inform the user that something went wrong.
+User input validation was also tested. The game prevents submission if the player name is too short or empty, ensuring that the game does not start with invalid data.
+
+These checks help improve the overall stability of the application and ensure a smoother user experience even when errors occur.
+
 
 ### Responsive Testing
 
