@@ -254,21 +254,43 @@ The header contains three main elements:
 
 - Logo / Icon – A small image of two cards stacked. On hover, it slightly enlarges to indicate it is clickable. Currently, clicking the logo shows a brief summary of how the game is built; in future versions, it could open a popup with additional information about the game or game settings.
 
-<img src="/assets/documentation/memory-logo.png.png">
+<img src="/assets/documentation/memory-logo.png">
 
 - Heading (H1) – Positioned in the center, using the playful gradient font to maintain visual identity.
 
-<img src="/assets/documentation/font-h1.png.png">
+<img src="/assets/documentation/font-h1.png">
 
 - Rules Button – Positioned to the right, styled with the secondary color. On hover, the background turns white, and clicking it opens a modal with the game rules.
 
-<img src="/assets/documentation/rules-btn.png.png">
+<img src="/assets/documentation/rules-btn.png">
 
 The header and navigation elements are responsive: they scale up or down depending on screen size, but their layout remains consistent across devices.
 
 | Mobile (320px) | Tablet (768px) | Desktop (1400px) |
 |----------------|----------------|-----------------|
 | <img src="/assets/documentation/header-mobile.png" width="150"> | <img src="/assets/documentation/header-tablet.png" width="250"> | <img src="/assets/documentation/header-desktop.png" width="350"> |
+
+#### Welcome Form
+The welcome form allows the player to enter their name before starting the game. 
+It consists of a simple design: an `<h2>` prompt “Enter your name”, an input field, and a “Start Game” button (white with a green hover effect). 
+On mobile devices, the input field and button are stacked vertically, 
+with the button spanning the same width as the input for a balanced look. 
+On tablets and desktops, the input and button are displayed side by side, with the button slightly smaller than the input.
+
+| Mobile (320px) | Tablet & Desktop (768px / 1400px) |
+|----------------|----------------------------------|
+| <img src="/assets/documentation/start-form-mobile.png" width="200"> | <img src="/assets/documentation/start-form-desktop.png" width="250"> |
+
+When the player clicks the button, the startGame function is activated. 
+The name entered in the form is saved as a variable for the duration of the game and used to personalize messages throughout the experience. 
+For example, after clicking “Start Game”, the message “Let’s go, [playerName]!” is displayed above the gameboard. 
+The name is also referenced in the end-of-game message, so the player sees a personalized message whether they win or lose. 
+If the player chooses to play again, the same name is retained, maintaining the personalized experience.
+
+<img src="/assets/documentation/welcome-message.png">
+
+The form also ensures the game does not start automatically when the page loads, giving more control over gameplay. 
+In the future, using local storage could allow tracking multiple game sessions, creating a persistent scoreboard for the player.
 
 
 ### Future Features
