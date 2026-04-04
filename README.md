@@ -345,6 +345,41 @@ The board is implemented as a CSS grid, initially 4×4 cards and is centered on 
 The icons were chosen from the [flaticon library](https://www.flaticon.com/) and stored in a local JSON file. 
 When the game starts, they are loaded using a fetch request, which returns a Promise. The code checks the response for errors before parsing it as JSON, and any errors are caught to display a message to the user. I chose a Promise-based fetch instead of async/await because the file is small and local, making this approach simple. However the async/await could also be used to make the execution order even clearer. 
 
+#### Shuffling Logic
+To create a fair and unpredictable game, the card deck is shuffled using a multi-step approach.
+
+1. First, the original array of cards is duplicated to create pairs, ensuring that each card has exactly one matching counterpart. 
+
+`const halfA = [...cardArray]; `<br>`
+ const halfB = [...cardArray];`
+
+2. These two arrays are then shuffled independently using the Fisher–Yates algorithm, which provides an efficient and unbiased randomization.
+
+`for (let i = arr.length - 1; i > 0; i--) { `<br>`
+const j = Math.floor(Math.random() * (i + 1)); `<br>`
+[arr[i], arr[j]] = [arr[j], arr[i]];
+}`
+
+3. After shuffling, the two halves are interleaved into a single deck. 
+
+`if (Math.random() < 0.5) { `<br>`
+  shuffledDeck.push(halfA[i], halfB[i]);`<br>`
+} else {`<br>>
+  shuffledDeck.push(halfB[i], halfA[i]);
+}`
+
+4. To further improve randomness and avoid predictable patterns, an additional step performs random swaps across the deck. This reduces the likelihood of matching cards being placed directly next to each other.
+
+`if (
+  shuffledDeck[i] !== shuffledDeck[j] && `<br>`
+  shuffledDeck[i] !== shuffledDeck[j-1] && `<br>`
+  shuffledDeck[j] !== shuffledDeck[i+1]`<br>`
+) { `<br>`
+  [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
+}`
+
+This layered approach ensures a balanced distribution of cards while maintaining a high level of randomness, resulting in a more engaging gameplay experience.
+
 
 ### Future Features
 
