@@ -719,6 +719,19 @@ Manual testing was performed for the core game logic to ensure all features beha
 | New Game               | Game resets completely and returns to start screen                |  Pass  |
 
 
+### Accessibility Testing
+Accessibility was considered to ensure the game is usable for a wide range of users, including those navigating via keyboard or assistive technologies.
+
+| Feature               | Expected Outcome                                             | Result |
+| --------------------- | ------------------------------------------------------------ | ------ |
+| Keyboard Navigation   | User can navigate using Tab and activate elements with Enter |  Pass  |
+| Focus States          | All interactive elements have visible focus indicators       |  Pass  |
+| Color Contrast        | Text and UI elements are readable with sufficient contrast   |  Pass  |
+| Image Alt Text        | All images include descriptive `alt` attributes              |  Pass  |
+| Screen Reader Support | Content is readable and logically structured (basic testing) |  Pass  |
+
+Accessibility testing was performed manually using browser tools and keyboard navigation.
+
 
 ### Responsive Testing
 
