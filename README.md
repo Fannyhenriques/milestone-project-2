@@ -169,7 +169,21 @@ The layout is structured to guide the user through the game in a clear and intui
 - An end screen appears after the game finishes, showing the result and options to restart or start a new game
 
 ### Colour Scheme
+The color palette is divided into three groups, each serving a specific purpose:
 
+1. **Base Colors** – These are neutral colors used for the background, text, borders, and surfaces. They provide contrast and ensure readability, making sure important information stands out against the background.
+
+<img src="/assets/documentation/base-colors.png">
+
+2. **Game-Enhancing Colors** – These colors are inspired by the logo and used to create a fun, playful feel. For example, gradients on the H1 heading and card fronts, hover effects on buttons, footer background, and the score/moves/misses display in the scoreboard. The secondary color is extracted directly from the logo using a color picker, ensuring a consistent visual identity across the interface. The aim was to consistently reuse colors across elements so that the interface feels cohesive and visually engaging.
+
+<img src="/assets/documentation/game-colors.png">
+
+3. **Feedback Colors** – These colors provide visual feedback based on game events. For example, the scoreboard colors gradually change as points decrease, and matched cards briefly turn green to indicate success. This helps players intuitively understand their performance without needing extra text instructions. The cards also get a lightgreen backgroundcolor when matched.
+
+Overall, the palette was chosen to balance **playfulness** with **clarity**, ensuring the game is visually appealing while keeping important information easy to notice.
+
+<img src="/assets/documentation/feedback-colors.png">
 
 ### Typography
 
