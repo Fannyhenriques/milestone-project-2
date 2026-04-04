@@ -702,6 +702,23 @@ Edge cases:
 - Clicking outside modals → closes correctly
 
 
+### Functionality Testing
+
+Manual testing was performed for the core game logic to ensure all features behave as expected:
+
+| Feature                | Expected Outcome                                                  | Result |
+| ---------------------- | ----------------------------------------------------------------- | ------ |
+| Card Flipping          | Cards flip correctly when clicked                                 |  Pass  |
+| Card Selection Limit   | Only two cards can be flipped at a time (`lockBoard`)             |  Pass  |
+| Matching Logic (Match) | Matching cards stay flipped and are marked as matched             |  Pass  |
+| Matching Logic (Miss)  | Non-matching cards flip back after a short delay                  |  Pass  |
+| Score Tracking         | Moves, misses, and score update correctly                         |  Pass  |
+| Win Condition          | Game ends when all pairs are matched (`matches === cards.length`) |  Pass  |
+| Lose Condition         | Game ends when score reaches 0 (`score <= 0`)                     |  Pass  |
+| Play Again             | Game resets board and score but keeps player name                 |  Pass  |
+| New Game               | Game resets completely and returns to start screen                |  Pass  |
+
+
 
 ### Responsive Testing
 
