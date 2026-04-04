@@ -804,6 +804,24 @@ No errors were found.
 
 Initial warnings were related to ES6 syntax. After specifying ES6 usage, the code passed without any warnings or errors.
 
+### Bugs & Fixes
+
+#### cardsArray
+During development, an issue occurred where the game board failed to render correctly. 
+This was caused by attempting to use the cardsArray variable in the global scope before it had been defined. Since the card data is fetched asynchronously from a JSON file, the rendering logic was executed before the data was available, resulting in a ReferenceError and an empty or broken game board.
+
+To resolve this, the card rendering logic was moved into a dedicated function: renderGameBoard(cardsArray).
+This function accepts an array of card data and is only called after the fetch request has successfully completed.
+
+As part of this solution:
+
+- The game board is cleared before rendering (innerHTML = "") to prevent duplicate elements
+- Each card is dynamically created with its front and back structure
+- Event listeners are attached to enable the flip functionality
+- A shuffled array of cards can be passed in, making the function reusable for restarting the game or adding future features such as difficulty levels
+
+This approach ensures that the game board is only populated when valid data is available, resolving both the undefined variable error and the issue of cards not rendering correctly.
+
 
 ---
 
