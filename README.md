@@ -777,6 +777,33 @@ Lighthouse testing was performed to evaluate performance, accessibility, best pr
 
 Due to the interactive nature of the application and its reliance on JavaScript, full Lighthouse testing across all game states was limited. However, manual testing was used to verify functionality and performance during active gameplay.
 
+### Browser Testing
+The following browsers were used during testing:
+
+- Google Chrome
+- Microsoft Edge
+- Mozilla Firefox
+- Apple Safari
+
+Verified consistent functionality across browsers
+Minor issue found in Safari where emojis were not displayed
+
+### Code Validation
+
+All code was validated to ensure it follows best practices and does not contain errors.
+
+- HTML: 
+Validated using the [W3C markup validator](https://validator.w3.org). 
+No errors were found.
+
+- CSS 
+Validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+No errors were found.
+
+- JavaScript tested using [JShint](https://jshint.com). 
+
+Initial warnings were related to ES6 syntax. After specifying ES6 usage, the code passed without any warnings or errors.
+
 
 ---
 
