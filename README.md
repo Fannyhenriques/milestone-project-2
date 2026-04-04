@@ -533,6 +533,24 @@ These state variables are updated by specific functions:
 
 By centralizing game state in these variables and carefully controlling updates through functions, the game avoids unexpected behavior, ensures accurate score tracking, and provides a smooth player experience.
 
+#### Modals
+The game uses modals to display additional information without leaving the main interface, such as the rules or game info.
+
+Rules Modal
+- Triggered by the rulesBtn button
+- Displays the game rules in a scrollable popup on smaller screens
+- Can be closed by clicking the close button or clicking outside the modal
+
+Game Info Modal
+- Triggered by the logoBtn button
+- Provides a brief summary of how the game is built
+
+All modals use a combination of CSS and JavaScript to manage visibility and animations. 
+When a modal is opened, a hidden class is removed, and when it is closed, the class is added back. 
+This ensures smooth transitions and maintains a clean, responsive layout across devices.
+
+Event listeners handle both button clicks and background clicks, preventing accidental interactions while keeping the user experience intuitive.
+
 
 ### Future Features
 
