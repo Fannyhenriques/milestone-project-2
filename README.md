@@ -426,6 +426,50 @@ Loss: The player runs out of points (score reaches zero)
 
 In both cases, the endGame() function is triggered, which transitions the interface from the game board to the end screen.
 
+#### Scoreboard
+The scoreboard provides real-time feedback on the player’s performance, tracking moves, misses, and score. 
+
+It consists of three main variables:
+- moves – counts the number of turns taken.
+- misses – counts incorrect matches.
+- score – starts at 100 and decreases by 5 for each miss.
+
+Desktop: 
+<div align="center">
+<img src="/assets/documentation/scoreboard-desktop.png" width="300">
+</div>
+
+Mobile:
+<div align="center">
+<img src="/assets/documentation/scoreboard-mobile.png" width="300">
+</div>
+
+These variables are dynamically updated in the UI using the corresponding DOM elements (movesEl, missesEl, scoreEl). 
+Every time a move is made or a miss occurs, the updateScoreUI() function is called to reflect the current state.
+
+To enhance feedback, the score element changes color at certain thresholds:
+
+Moderate score (70–50):
+
+<div align="center">
+<img src="/assets/documentation/score-moderate.png" width="300">
+</div>
+
+Medium score (50–30)
+
+<div align="center">
+<img src="/assets/documentation/score-medium.png" width="300">
+</div>
+
+Low score (<30)
+
+<div align="center">
+<img src="/assets/documentation/score-low.png" width="300">
+</div>
+
+This visual cue allows players to quickly assess their performance and motivates careful matching. 
+By combining numeric feedback with color indicators, the scoreboard creates an engaging and informative layer of game interaction.
+
 
 ### Future Features
 
