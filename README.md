@@ -157,19 +157,10 @@ The overall goal was to balance playfulness with clarity, ensuring that importan
 ### Layout
 Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure across different devices.
 
-<div style="display: flex; gap: 10px; align-items: flex-start;"> 
-<div style="text-align: center; margin: 10px;" >
-	    <strong>Desktop</strong><br>
-<img src="/assets/documentation/wireframe-desktop.png" width="300"> 
-</div>
-  <div style="text-align: center; margin: 10px;">
-	    <strong>Tablet</strong><br>
+<div style="display: flex; flex-direction: row; gap: 10px; align-items: flex-start;"> 
+<img src="/assets/documentation/wireframe-desktop.png" width="300"> 	  
 <img src="/assets/documentation/wireframe-tablet.png" width="250"> 
-</div>
-  <div style="text-align: center; margin: 10px;">
-    <strong>Mobile</strong><br>
 <img src="/assets/documentation/wireframe-mobile.png" width="200">
-</div>
 </div>
 
 The layout is structured to guide the user through the game in a clear and intuitive way.
@@ -330,15 +321,9 @@ It consists of a grid of 12 cards that players can flip to reveal hidden images.
 #### Layout:
 The board is implemented as a CSS grid, initially 4×4 cards and is centered on the screen across all devices. 
 
-<div align="center">
-<div style="display: flex; gap: 10px; align-items: flex-start;"> 
-    <strong>Mobile</strong><br>
+<div style="display: flex; flex-direction: row; gap: 10px; align-items: flex-start;"> 
     <img src="/assets/documentation/game-board-mobile.png" width="250">
-  </div>
-  <div style="display: inline-block; text-align: center;">
-    <strong>Desktop/Tablet</strong><br>
     <img src="/assets/documentation/game-board-desktop.png" width="300">
-  </div>
 </div>
 
 #### Fetching Card-content (Icons)
@@ -350,33 +335,33 @@ To create a fair and unpredictable game, the card deck is shuffled using a multi
 
 1. First, the original array of cards is duplicated to create pairs, ensuring that each card has exactly one matching counterpart. 
 
-`const halfA = [...cardArray]; `<br>`
- const halfB = [...cardArray];`
+	`const halfA = [...cardArray]; `<br>`
+ 	const halfB = [...cardArray];`
 
 2. These two arrays are then shuffled independently using the Fisher–Yates algorithm, which provides an efficient and unbiased randomization.
 
-`for (let i = arr.length - 1; i > 0; i--) { `<br>`
-const j = Math.floor(Math.random() * (i + 1)); `<br>`
-[arr[i], arr[j]] = [arr[j], arr[i]];
-}`
+	`for (let i = arr.length - 1; i > 0; i--) { `<br>`
+	const j = Math.floor(Math.random() * (i + 1)); `<br>`
+	[arr[i], arr[j]] = [arr[j], arr[i]];
+	}`
 
 3. After shuffling, the two halves are interleaved into a single deck. 
 
-`if (Math.random() < 0.5) { `<br>`
+	`if (Math.random() < 0.5) { `<br>`
   shuffledDeck.push(halfA[i], halfB[i]);`<br>`
-} else {`<br>>
-  shuffledDeck.push(halfB[i], halfA[i]);
-}`
+	} else {`<br>>
+  	shuffledDeck.push(halfB[i], halfA[i]);
+	}`
 
 4. To further improve randomness and avoid predictable patterns, an additional step performs random swaps across the deck. This reduces the likelihood of matching cards being placed directly next to each other.
 
-`if (
-  shuffledDeck[i] !== shuffledDeck[j] && `<br>`
-  shuffledDeck[i] !== shuffledDeck[j-1] && `<br>`
-  shuffledDeck[j] !== shuffledDeck[i+1]`<br>`
-) { `<br>`
-  [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
-}`
+	`if (
+  	shuffledDeck[i] !== shuffledDeck[j] && `<br>`
+  	shuffledDeck[i] !== shuffledDeck[j-1] && `<br>`
+  	shuffledDeck[j] !== shuffledDeck[i+1]`<br>`
+	) { `<br>`
+  	[shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
+	}`
 
 This layered approach ensures a balanced distribution of cards while maintaining a high level of randomness, resulting in a more engaging gameplay experience.
 
