@@ -514,6 +514,25 @@ New Game
 
 Both buttons ensure a smooth and predictable transition between game states, providing control over restarting while maintaining consistent gameplay logic.
 
+#### Game State Management
+The game maintains several key pieces of state to manage interactions and track progress. 
+
+These variables work together to ensure smooth and predictable gameplay:
+- firstCard / secondCard – Track the two cards currently flipped. Used to evaluate matches.
+- lockBoard – Temporarily prevents further card flips while two cards are being compared, avoiding invalid interactions.
+- moves / misses / score – Track player performance and are displayed on the scoreboard.
+- matches – Counts how many pairs have been successfully matched, used to detect a win.
+- playerName – Stores the player’s name for personalized messages.
+- cards – Holds the deck of card objects fetched from the JSON file.
+
+These state variables are updated by specific functions:
+- flipCard() – Handles card selection and triggers match evaluation
+- checkMatch() – Updates matches, moves, misses, and score
+- resetFlippedCards() – Clears firstCard and secondCard after each turn
+- restartGame() / newGame() – Reset the overall state depending on whether the player chooses to replay or start fresh
+
+By centralizing game state in these variables and carefully controlling updates through functions, the game avoids unexpected behavior, ensures accurate score tracking, and provides a smooth player experience.
+
 
 ### Future Features
 
