@@ -325,6 +325,24 @@ If the player chooses to play again, the same name is retained, maintaining the 
 The form also ensures the game does not start automatically when the page loads, giving more control over gameplay. 
 In the future, using local storage could allow tracking multiple game sessions, creating a persistent scoreboard for the player.
 
+### Gameboard
+The gameboard is the main interactive area where the memory match game takes place. 
+It consists of a grid of 12 cards that players can flip to reveal hidden images.
+
+#### Layout:
+The board is implemented as a CSS grid, initially 4×4 cards and is centered on the screen across all devices. 
+
+<div align="center">
+  <div style="display: inline-block; text-align: center; margin-right: 20px;">
+    <strong>Mobile</strong><br>
+    <img src="/assets/documentation/game-board-mobile.png" width="250">
+  </div>
+  <div style="display: inline-block; text-align: center;">
+    <strong>Desktop/Tablet</strong><br>
+    <img src="/assets/documentation/game-board-desktop.png" width="300">
+  </div>
+</div>
+
 
 ### Future Features
 
