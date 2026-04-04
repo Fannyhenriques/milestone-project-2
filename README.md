@@ -585,18 +585,31 @@ Accessibility was considered throughout the development of this project to ensur
 
 ## Technologies Used
 
-- HTML  
-- CSS  
-- JavaScript  
+Core Technologies
 
----
+| Technology               | Purpose / Notes                                                                            |
+| ------------------------ | ------------------------------------------------------------------------------------------ |
+| **HTML**                 | Structure and markup for the game interface (start screen, game board, modals, end screen) |
+| **CSS**                  | Styling, layout, responsive design, animations (card flips, hover effects, confetti/rain)  |
+| **JavaScript**           | Game logic, card flipping, matching, score tracking, event handling, dynamic UI updates    |
+| **JSON**                 | Storing card data (icons, names) locally                                                   |
+| **Fetch API / Promises** | Asynchronous loading of card data from JSON                                                |
 
-## Development & Deployment
+Tools & Resources
 
-### Development
+| Tool / Resource         | Purpose / Notes                                                                   |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| **Git**                 | Version control for tracking changes                                              |
+| **GitHub**              | Repository hosting, collaboration, and deployment                                 |
+| **Browser Dev Tools**   | Debugging, inspecting elements, testing responsiveness, monitoring console errors |
+| **Lighthouse**          | Performance, accessibility, SEO, and best practices audit                         |
+| **Silktide**            | Accessibility and web standards testing                                           |
+| **JSHint / Validators** | JavaScript, HTML, and CSS validation                                              |
+| **ColorZilla**          | Picking and analyzing colors for UI                                               |
+| **Flaticon**            | Source of icons used on cards                                                     |
+| **Google Fonts**        | Typography for headings and text                                                  |
+| **ChatGPT**             | Assistance with understanding and implementing logic                              |
 
-
-### Deployment
 
 
 ---
