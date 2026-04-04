@@ -408,6 +408,15 @@ If the cards do not match, the game registers a miss. The score is reduced, and 
 
 This logic creates a clear feedback loop for the player, reinforcing successful matches while maintaining challenge through penalties for incorrect guesses.
 
+#### Reset Logic
+After each turn, the game resets the selected card state to prepare for the next interaction. This is handled by the resetFlippedCards() function.
+
+Clears the references to the currently selected cards (firstCard and secondCard)
+Unlocks the board by resetting the lockBoard variable
+Ensures the player can continue interacting without unintended behavior
+
+By explicitly resetting the game state after each evaluation, the logic remains predictable and prevents errors such as comparing incorrect cards or blocking further input.
+
 
 ### Future Features
 
