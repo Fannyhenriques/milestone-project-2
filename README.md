@@ -753,6 +753,21 @@ Overall, the game performs efficiently, providing a seamless and responsive user
 
 ### Responsive Testing
 
+Responsive testing was conducted using browser developer tools across multiple breakpoints, ranging from 320px (mobile) up to 1400px (desktop).
+
+All core components were verified to maintain a consistent and functional layout across screen sizes, including:
+
+- Navigation / Header
+- Start Form
+- Game Board
+- Scoreboard
+- End Screen
+- Modals
+- Footer
+
+The layout adapts smoothly between mobile, tablet, and desktop views, ensuring a balanced and accessible user experience.
+
+
 ---
 
 ## Known Bugs
