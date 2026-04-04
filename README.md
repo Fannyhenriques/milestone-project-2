@@ -106,7 +106,7 @@ As a player I want to:
 
 ### Game flow goals
 
-The following describes how the user moves through the game and interacts with it.
+The following describes the expectation of how the user moves through the game and interacts with it:
 
 1. Start Screen
 - User enters their name
@@ -146,9 +146,27 @@ The following describes how the user moves through the game and interacts with i
 ---
 
 ## Design
+The design aims to create a fun and engaging experience without overwhelming the user. 
+A clean and simple visual style was chosen to keep the focus on the gameplay. 
+Some visual design ideas were inspired by another student [project](https://github.com/lowrycode/swaplett-project?tab=readme-ov-file) shown to me by my code facilitator, such as clean layout and playful typography. However, game logic and implementation were developed independently.
+
+Colours and animations are used to enhance the user experience and provide feedback, 
+such as the score changing colour as it decreases and different animations depending on whether the player wins or loses. 
+The overall goal was to balance playfulness with clarity, ensuring that important information is always easy to see.
 
 ### Layout
+Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure across different devices.
 
+<img src="/assets/documentation/wireframe-desktop.png"> 
+<img src="/assets/documentation/wireframe-tablet.png"> 
+<img src="/assets/documentation/wireframe-mobile.png">
+
+The layout is structured to guide the user through the game in a clear and intuitive way.
+- A header contains the game title, logo, and access to the rules
+- The start screen allows the user to enter their name before beginning the game
+- The game board is centered on the page to maintain focus
+- Game information such as moves, misses, and score is displayed clearly below the board
+- An end screen appears after the game finishes, showing the result and options to restart or start a new game
 
 ### Colour Scheme
 
