@@ -375,6 +375,23 @@ Once the card data has been fetched and shuffled, the game board is dynamically 
 
 By generating the cards dynamically instead of hardcoding them in HTML, the game becomes more flexible and scalable, making it easier to update or expand in the future.
 
+#### Card Mechanics and card flipping
+Each card consists of two sides: a front and a back. The back displays a gradient design, while the front reveals the card’s icon. 
+This structure is implemented using nested elements and styled with CSS 3D transforms to create a smooth flip animation.
+
+Visual feedback plays an important role in guiding the user: 
+- Hovering over a card slightly scales it up to indicate interactivity, while clicking (or focusing) triggers the flip effect, revealing the card’s content.
+
+<div align="center">
+<img src="/assets/documentation/flip-nomatch.png" width="300">
+</div>
+
+- The flip behavior is controlled through JavaScript by toggling a flipped class on the selected card. 
+- To maintain consistent game logic, the system keeps track of the first and second selected cards. 
+- A locking mechanism (lockBoard) is used to temporarily disable interaction while two cards are being evaluated, preventing the player from flipping more than two cards at once.
+
+This combination of visual feedback and controlled interaction ensures a smooth and intuitive gameplay experience.
+
 
 ### Future Features
 
