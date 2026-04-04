@@ -249,6 +249,19 @@ The game is designed to keep the player informed and motivated. Key elements of 
 
 The game mechanics are designed around matching cards, tracking score, moves, and misses, and providing immediate visual feedback through colors and animations. Below, each feature is described in detail.
 
+#### Navigation / Header
+The header contains three main elements:
+
+- Logo / Icon – A small image of two cards stacked. On hover, it slightly enlarges to indicate it is clickable. Currently, clicking the logo shows a brief summary of how the game is built; in future versions, it could open a popup with additional information about the game or game settings.
+- Heading (H1) – Positioned in the center, using the playful gradient font to maintain visual identity.
+- Rules Button – Positioned to the right, styled with the secondary color. On hover, the background turns white, and clicking it opens a modal with the game rules.
+
+The header and navigation elements are responsive: they scale up or down depending on screen size, but their layout remains consistent across devices.
+
+| Mobile (320px) | Tablet (768px) | Desktop (1400px) |
+|----------------|----------------|-----------------|
+| <img src="/assets/documentation/header-mobile.png" width="150"> | <img src="/assets/documentation/header-tablet.png" width="250"> | <img src="/assets/documentation/header-desktop.png" width="350"> |
+
 
 ### Future Features
 
