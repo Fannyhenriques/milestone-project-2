@@ -676,6 +676,32 @@ Each user story was tested to ensure the expected outcome was achieved. See resu
 | Allow a new player to start fresh             | “New Game” resets all data and returns to start screen |  Pass  |
 
 
+Each game-flow goal was tested based on user flows, see result below: 
+
+| Step            | Action                   | Expected Outcome                          | Result |
+| --------------- | ------------------------ | ----------------------------------------- | ------ |
+| Start Screen    | Enter name + click start | Game initializes and UI updates           |  Pass  |
+| Game Begins     | Cards displayed          | Cards are shuffled and shown face down    |  Pass  |
+| Gameplay        | Click one card           | Card flips                                |  Pass  |
+| Gameplay        | Click second card        | Second card flips                         |  Pass  |
+| Matching        | Cards match              | Cards stay flipped and marked as matched  |  Pass  |
+| Matching        | Cards do not match       | Cards flip back and score decreases       |  Pass  |
+| Feedback        | Ongoing play             | Moves, misses, and score update correctly |  Pass  |
+| Feedback        | Low score                | Score changes color                       |  Pass  |
+| Game End (Win)  | All pairs matched        | End screen with stats appears             |  Pass  |
+| Game End (Lose) | Score reaches 0          | Lose message and animation shown          |  Pass  |
+| Replay          | Click “Play Again”       | Game restarts with same player            |  Pass  |
+| New Game        | Click “New Game”         | Returns to start screen and resets data   |  Pass  |
+
+
+Edge cases:
+
+- Rapid clicking on multiple cards → prevented by lockBoard
+- Double-clicking the same card → ignored
+- Submitting empty or short name → prevented
+- Clicking outside modals → closes correctly
+
+
 
 ### Responsive Testing
 
