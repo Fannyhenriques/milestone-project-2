@@ -241,6 +241,14 @@ The game is designed to keep the player informed and motivated. Key elements of 
 - Rules accessibility: The rules modal is always available, helping players understand the game mechanics.
 - Responsive feedback placement: Scoreboard, moves, and misses are visible and adapt to different screen sizes.
 
+---
+
+## Features & Game logic
+
+### Current Features & logic
+
+The game mechanics are designed around matching cards, tracking score, moves, and misses, and providing immediate visual feedback through colors and animations. Below, each feature is described in detail.
+
 
 ### Future Features
 
