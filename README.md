@@ -184,29 +184,38 @@ The color palette is divided into three groups, each serving a specific purpose:
 
 1. **Base Colors** – These are neutral colors used for the background, text, borders, and surfaces. They provide contrast and ensure readability, making sure important information stands out against the background.
 
-<img src="/assets/documentation/base-colors.png">
+<div align="center">
+<img src="/assets/documentation/base-colors.png" width="400">
+</div>
 
 2. **Game-Enhancing Colors** – These colors are inspired by the logo and used to create a fun, playful feel. For example, gradients on the H1 heading and card fronts, hover effects on buttons, footer background, and the score/moves/misses display in the scoreboard. The secondary color is extracted directly from the logo using a color picker, ensuring a consistent visual identity across the interface. The aim was to consistently reuse colors across elements so that the interface feels cohesive and visually engaging.
 
-<img src="/assets/documentation/game-colors.png">
+<div align="center">
+<img src="/assets/documentation/game-colors.png" width="400">
+</div>
 
 3. **Feedback Colors** – These colors provide visual feedback based on game events. For example, the scoreboard colors gradually change as points decrease, and matched cards briefly turn green to indicate success. This helps players intuitively understand their performance without needing extra text instructions. The cards also get a lightgreen backgroundcolor when matched.
 
 Overall, the palette was chosen to balance **playfulness** with **clarity**, ensuring the game is visually appealing while keeping important information easy to notice.
 
-<img src="/assets/documentation/feedback-colors.png">
+<div align="center">
+<img src="/assets/documentation/feedback-colors.png" width="400">
+</div>
 
 ### Typography
 Two fonts were chosen to create a balance between readability and playfulness. "Varela" is used for body text and interface elements, providing a simple style that doesn’t distract from gameplay. "Bangers" is used for the H1 heading, giving a fun feel to the logo and main titles. Both fonts were selected from Google Fonts to ensure web compatibility and a consistent look across devices.
 
 Body font: Varela
 
+<div align="center">
 <img src="/assets/documentation/font-body.png">
- 
+ </div>
+
 Heading font (H1): Bangers
 
+<div align="center">
 <img src="/assets/documentation/font-h1.png">
-
+</div>
 
 ### Icons
 The icons were selected from the Flaticon library with a focus on clarity, playfulness, and broad recognition. The goal was to create a visual style that feels lighthearted and accessible to players of all ages.
@@ -265,21 +274,27 @@ The header contains three main elements:
 
 - Logo / Icon – A small image of two cards stacked. On hover, it slightly enlarges to indicate it is clickable. Currently, clicking the logo shows a brief summary of how the game is built; in future versions, it could open a popup with additional information about the game or game settings.
 
+<div align="center">
 <img src="/assets/documentation/memory-logo.png">
+</div>
 
 - Heading (H1) – Positioned in the center, using the playful gradient font to maintain visual identity.
 
+<div align="center">
 <img src="/assets/documentation/font-h1.png">
+</div>
 
 - Rules Button – Positioned to the right, styled with the secondary color. On hover, the background turns white, and clicking it opens a modal with the game rules.
 
+<div align="center">
 <img src="/assets/documentation/rules-btn.png">
+</div>
 
 The header and navigation elements are responsive: they scale up or down depending on screen size, but their layout remains consistent across devices.
 
-| Mobile (320px) | Tablet (768px) | Desktop (1400px) |
+| Mobile 				 | Tablet 			  | Desktop 			  |
 |----------------|----------------|-----------------|
-| <img src="/assets/documentation/header-mobile.png" width="150"> | <img src="/assets/documentation/header-tablet.png" width="250"> | <img src="/assets/documentation/header-desktop.png" width="350"> |
+| <img src="/assets/documentation/header-mobile.png" width="200"> | <img src="/assets/documentation/header-tablet.png" width="250"> | <img src="/assets/documentation/header-desktop.png" width="300"> |
 
 #### Welcome Form
 The welcome form allows the player to enter their name before starting the game. 
@@ -288,9 +303,9 @@ On mobile devices, the input field and button are stacked vertically,
 with the button spanning the same width as the input for a balanced look. 
 On tablets and desktops, the input and button are displayed side by side, with the button slightly smaller than the input.
 
-| Mobile (320px) | Tablet & Desktop (768px / 1400px) |
+| Mobile 				 | Tablet & Desktop 								|
 |----------------|----------------------------------|
-| <img src="/assets/documentation/start-form-mobile.png" width="200"> | <img src="/assets/documentation/start-form-desktop.png" width="250"> |
+| <img src="/assets/documentation/start-form-mobile.png" width="300"> | <img src="/assets/documentation/start-form-desktop.png" width="350"> |
 
 When the player clicks the button, the startGame function is activated. 
 The name entered in the form is saved as a variable for the duration of the game and used to personalize messages throughout the experience. 
@@ -298,7 +313,9 @@ For example, after clicking “Start Game”, the message “Let’s go, [player
 The name is also referenced in the end-of-game message, so the player sees a personalized message whether they win or lose. 
 If the player chooses to play again, the same name is retained, maintaining the personalized experience.
 
-<img src="/assets/documentation/welcome-message.png">
+<div align="center">
+<img src="/assets/documentation/welcome-message.png" width="250">
+</div>
 
 The form also ensures the game does not start automatically when the page loads, giving more control over gameplay. 
 In the future, using local storage could allow tracking multiple game sessions, creating a persistent scoreboard for the player.
