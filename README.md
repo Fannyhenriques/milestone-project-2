@@ -486,6 +486,34 @@ Lose scenario
 These visual and textual cues provide clear feedback to the player, 
 marking the conclusion of the game and encouraging replayability.
 
+#### Play Again / New Game Buttons
+The game provides two options for restarting: Play Again and New Game, each tied directly to specific JavaScript functions.
+
+Play Again
+- Triggered by the playAgainBtn button.
+- Calls the restartGame() function, which:
+- Resets the game board and shuffles the cards (shuffleCards())
+- Clears moves, misses, and score (resetGameData())
+- Keeps the player’s name intact for a personalized experience
+- Allows the player to quickly replay without re-entering their name
+
+<div align="center">
+<img src="/assets/documentation/play-again.png" width="400">
+</div>
+
+New Game
+- Triggered by the newGameBtn button.
+- Calls the newGame() function, which:
+- Returns the player to the initial start screen (startSection)
+- Clears all game data, including the player name and input field
+- Hides game elements (gameBoard, gameInfo, welcomeMessage) for a fresh start
+
+<div align="center">
+<img src="/assets/documentation/new-game-png.png" width="400">
+</div>
+
+Both buttons ensure a smooth and predictable transition between game states, providing control over restarting while maintaining consistent gameplay logic.
+
 
 ### Future Features
 
