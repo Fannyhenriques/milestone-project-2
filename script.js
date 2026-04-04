@@ -38,7 +38,7 @@ let score = 100;
 
 let firstCard = null;
 let secondCard = null;
-let lockBoard = false; //lock board, should not be able to pick more than two cards
+let lockBoard = false;
 
 let cards = [];
 
