@@ -822,6 +822,41 @@ As part of this solution:
 
 This approach ensures that the game board is only populated when valid data is available, resolving both the undefined variable error and the issue of cards not rendering correctly.
 
+#### Score UI Not Resetting
+During testing, an issue was identified where the score color did not reset when starting a new game. 
+Although the score value was correctly reset to 100, the text remained styled as a “low score” (red) if the previous game ended with a low score.
+
+- Cause:
+The score styling was controlled by a CSS class (low-score) that was applied when the score dropped below a certain threshold:
+
+scoreEl.classList.toggle("low-score", score < 50);
+
+However, when resetting the game, only the score value (score = 100) was updated. 
+The CSS class was not removed, causing a mismatch between the game state and the UI.
+
+- Solution:
+To fix this, both the data and UI needed to be reset together. 
+A dedicated function, updateScoreUI(), was introduced to handle all score-related UI updates in one place.
+
+This function:
+- Updates the score text
+- Removes any existing score-related classes
+- Applies the correct class based on the current score
+
+It is now called whenever the score changes and when the game is reset (e.g. in resetGameData()), 
+ensuring that the UI always reflects the correct state.
+
+- Key Takeaway:
+
+Updating application state (e.g. score = 100) does not automatically update the UI. Visual changes, such as CSS classes, must be handled explicitly.
+
+By centralizing UI logic in a single function, the code becomes:
+- Easier to maintain
+- Less error-prone
+- More scalable for future features (e.g. additional score levels or styles)
+
+This bug highlighted the importance of keeping related UI logic in one place to ensure consistency between data and presentation.
+
 
 ---
 
