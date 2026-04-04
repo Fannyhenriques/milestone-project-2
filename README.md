@@ -551,6 +551,27 @@ This ensures smooth transitions and maintains a clean, responsive layout across 
 
 Event listeners handle both button clicks and background clicks, preventing accidental interactions while keeping the user experience intuitive.
 
+## Accessibility
+
+Accessibility was considered throughout the development of this project to ensure the game is usable for a wider audience, including users who rely on screen readers. While memory games are inherently visual, efforts were made to provide alternative feedback mechanisms for non-visual users.
+
+#### Screen Reader Support
+- ARIA attributes such as `aria-live` are used to announce score updates
+- Dynamic game feedback (moves, misses, score) is communicated to assistive technologies
+- Card elements include descriptive labels to indicate their state (flipped/unflipped)
+
+#### Semantic HTML
+- Semantic elements such as `<header>`, `<main>`, `<section>`, and `<footer>` are used to provide structure
+- Headings are used in a logical order to support navigation
+
+#### Form Accessibility
+- The name input includes a label (visually hidden) to ensure it is accessible to screen readers
+- Input validation prevents empty or invalid submissions
+
+#### Visual Accessibility
+- Sufficient contrast between text and background colors
+- Clear visual feedback (color and size changes) to indicate score changes
+
 
 ### Future Features
 
