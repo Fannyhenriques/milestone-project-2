@@ -611,6 +611,40 @@ Tools & Resources
 | **ChatGPT**             | Assistance with understanding and implementing logic                              |
 
 
+## Deployment
+Deployment with GitHub Pages
+
+This project is deployed using GitHub Pages. Below is a step-by-step summary of the process:
+
+- Initialize and push the project to GitHub
+- The project was created locally in VS Code.
+- Git was initialized and all files were added and committed.
+- A remote repository was created on GitHub and the project was pushed to the main branch.
+- Configure GitHub Pages
+- Navigated to the repository on GitHub.
+- Opened Settings and selected Pages.
+- Under Build and deployment, selected:
+- Source: Deploy from a branch
+- Branch: main
+- Folder: /root
+- Ensure correct project structure
+- Verified that an index.html file exists in the root directory.
+- Ensured all file paths (CSS, JavaScript, images) use relative paths.
+- Deploy the project
+- Saved the GitHub Pages settings.
+- GitHub automatically built and deployed the project.
+- Access the live site
+The project is available at:
+https://<your-username>.github.io/<repository-name>/
+
+Update the deployment
+Any changes made locally are pushed to GitHub:
+
+git add .
+git commit -m "update"
+git push
+
+The site updates automatically after each push.
 
 ---
 
