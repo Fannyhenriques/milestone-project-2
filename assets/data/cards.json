@@ -16,7 +16,7 @@
 		"icon": "assets/icons/dog.png"
 	},
 	{
-		"name": "googles",
+		"name": "goggles",
 		"icon": "assets/icons/goggles.png"
 	},
 	{
@@ -30,5 +30,13 @@
 	{
 		"name": "wizard-hat",
 		"icon": "assets/icons/wizard-hat.png"
+	},
+	{
+		"name": "snowman",
+		"icon": "assets/icons/snowman.png"
+	},
+	{
+		"name": "tools",
+		"icon": "assets/icons/tools.png"
 	}
 ]
