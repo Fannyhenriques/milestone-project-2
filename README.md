@@ -140,7 +140,7 @@ such as the score changing colour as it decreases and different animations depen
 The overall goal was to balance playfulness with clarity, ensuring that important information is always easy to see.
 
 ### Wireframes
-Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure across different devices.
+Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure. However, the design evolved throughout development, leading to a final result that differs from the original wireframes.
 
 <div style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start;"> 
 <img src="/assets/documentation/wireframe-desktop.png" width="300"> 	  
