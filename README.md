@@ -756,22 +756,37 @@ By centralizing UI logic in a single function, the code becomes:
 
 This bug highlighted the importance of keeping related UI logic in one place to ensure consistency between data and presentation.
 
-#### Shuffle Logic for Cards
+### Shuffle Logic for Cards
 During development, an issue was noticed with the card shuffle logic. Initially, the deck was shuffled using a simple Math.random() - 0.5 approach:
 
+```
 function shuffleCards(cardArray) {
   const doubled = [...cardArray, ...cardArray]; // create pairs
   return doubled.sort(() => Math.random() - 0.5);
 }
+```
 
-Problem
+#### Problem: 
 
-While this technically randomizes the array, it often placed identical cards next to each other. In a small deck (16 cards → 8 pairs), this made it easy for players to spot patterns, especially when playing multiple times in a row. The game didn’t feel fully random or challenging.
+While this technically randomizes the array, it often placed identical cards next to each other. 
+In a small deck (16 cards → 8 pairs), this made it easy for players to spot patterns, especially when playing multiple times in a row. 
+The game didn’t feel fully random or challenging.
 
-Initial Improvement – Fisher–Yates Shuffle
+- Improvement – Fisher–Yates Shuffle: 
 
-The Fisher–Yates algorithm was introduced to properly randomize the array:
+To improve the shuffle logic, I explored the Fisher–Yates algorithm through this [tutorial.](https://dev.to/tanvir_azad/fisher-yates-shuffle-the-right-way-to-randomize-an-array-4d2p) To better understand the underlying logic, I also used ChatGPT as a support tool, focusing on conceptual explanations rather than direct code:
 
+<div align="center">
+<img src="/assets/documentation/chatgpt-question.png" width="400">
+</div>
+
+<div align="center">
+<img src="/assets/documentation/chatgpt-answer.png" width="400">
+</div>
+
+Using this approach, Fisher–Yates was implemented:
+
+```
 function shuffleCards(cardArray) {
   const doubled = [...cardArray, ...cardArray];
   for (let i = doubled.length - 1; i > 0; i--) {
@@ -780,43 +795,26 @@ function shuffleCards(cardArray) {
   }
   return doubled;
 }
+```
 
-This ensured better randomization, but identical cards still occasionally ended up adjacent, which was not ideal for repeated gameplay.
+This significantly improved the randomness, but identical cards could still occasionally end up next to each other.
 
-Final Solution – Split, Shuffle, and Interleave
+- Final Solution – Split, Shuffle, and Interleave
 
-To fully avoid adjacent identical cards, the deck was split into two halves:
+To further improve the distribution, a multi-step approach was implemented:
+1. Split the deck into two halves: Each half contains one copy of every card
+3. Shuffle each half independently Using the Fisher–Yates algorithm
+5. Interleave the halves: Alternating cards from each half to reduce the chance of adjacent pairs
+7. Optional fine-tuning: A final pass swaps cards if any identical pairs still end up next to each other (rare case)
 
-1. Split the deck into halves
-Each half contains one copy of each pair:
+This ensures that matching cards are distributed more evenly across the board.
 
-Half A: [A, B, C, D]
-Half B: [A, B, C, D]
+Result: 
+- Improved randomness and distribution
+- Reduced predictable patterns
+- More engaging gameplay, especially over multiple rounds
 
-2. Shuffle each half independently
-
-Half A → [C, A, D, B]
-Half B → [B, D, A, C]
-
-This ensures identical cards are in different positions.
-
-3. Interleave the halves
-Take one card from Half A, then one from Half B, repeatedly:
-
-Deck so far: [C, B, A, D, D, A, B, C]
-
-Now no identical cards are adjacent, while keeping randomness.
-
-4. Optional fine-tuning
-After interleaving, the final deck is scanned once to ensure no pairs slipped together. 
-If any conflict is found, the card is swapped with a non-adjacent card. This step is rarely needed with the interleaving method.
-
-Benefits
-- True randomization while avoiding adjacent pairs
-- Reusable function for replaying the game or implementing different difficulty levels
-- Keeps the game fair and challenging, even for repeated plays
-
-This approach guarantees a more enjoyable gameplay experience, where players cannot predict card positions even after multiple rounds.
+This final approach creates a more balanced and enjoyable experience where players cannot easily predict card positions.
 
 ---
 
