@@ -434,72 +434,10 @@ New Game
 - Hides game elements (gameBoard, gameInfo, welcomeMessage) for a fresh start
 
 <div align="center">
-<img src="/assets/documentation/new-game-png.png" width="400">
+<img src="/assets/documentation/new-game-png.png" width="300">
 </div>
 
 Both buttons ensure a smooth and predictable transition between game states, providing control over restarting while maintaining consistent gameplay logic.
-
-#### Game State Management
-The game maintains several key pieces of state to manage interactions and track progress. 
-
-These variables work together to ensure smooth and predictable gameplay:
-- firstCard / secondCard – Track the two cards currently flipped. Used to evaluate matches.
-- lockBoard – Temporarily prevents further card flips while two cards are being compared, avoiding invalid interactions.
-- moves / misses / score – Track player performance and are displayed on the scoreboard.
-- matches – Counts how many pairs have been successfully matched, used to detect a win.
-- playerName – Stores the player’s name for personalized messages.
-- cards – Holds the deck of card objects fetched from the JSON file.
-
-These state variables are updated by specific functions:
-- flipCard() – Handles card selection and triggers match evaluation
-- checkMatch() – Updates matches, moves, misses, and score
-- resetFlippedCards() – Clears firstCard and secondCard after each turn
-- restartGame() / newGame() – Reset the overall state depending on whether the player chooses to replay or start fresh
-
-By centralizing game state in these variables and carefully controlling updates through functions, the game avoids unexpected behavior, ensures accurate score tracking, and provides a smooth player experience.
-
-#### Modals
-The game uses modals to display additional information without leaving the main interface, such as the rules or game info.
-
-Rules Modal
-- Triggered by the rulesBtn button
-- Displays the game rules in a scrollable popup on smaller screens
-- Can be closed by clicking the close button or clicking outside the modal
-
-Game Info Modal
-- Triggered by the logoBtn button
-- Provides a brief summary of how the game is built
-
-All modals use a combination of CSS and JavaScript to manage visibility and animations. 
-When a modal is opened, a hidden class is removed, and when it is closed, the class is added back. 
-This ensures smooth transitions and maintains a clean, responsive layout across devices.
-
-Event listeners handle both button clicks and background clicks, preventing accidental interactions while keeping the user experience intuitive.
-
-## Accessibility
-
-Accessibility was considered throughout the development of this project to ensure the game is usable for a wider audience, including users who rely on screen readers. While memory games are inherently visual, efforts were made to provide alternative feedback mechanisms for non-visual users.
-
-#### Screen Reader Support
-- ARIA attributes such as `aria-live` are used to announce score updates
-- Dynamic game feedback (moves, misses, score) is communicated to assistive technologies
-- Card elements include descriptive labels to indicate their state (flipped/unflipped)
-
-#### Semantic HTML
-- Semantic elements such as `<header>`, `<main>`, `<section>`, and `<footer>` are used to provide structure
-- Headings are used in a logical order to support navigation
-
-#### Form Accessibility
-- The name input includes a label (visually hidden) to ensure it is accessible to screen readers
-- Input validation prevents empty or invalid submissions
-
-#### Visual Accessibility
-- Sufficient contrast between text and background colors
-- Clear visual feedback (color and size changes) to indicate score changes
-
-#### Future Improvements
-- Full keyboard navigation for the game board
-- More descriptive announcements for card matching and mismatches
 
 #### Footer
 The footer displays a copyright notice at the bottom of the page.
@@ -577,6 +515,7 @@ Tools & Resources
 ---
 
 ## Deployment
+
 #### Deployment with GitHub Pages
 
 This project is deployed using GitHub Pages, allowing you to access a live version of the website.
