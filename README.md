@@ -525,6 +525,19 @@ Persistent Score Tracking
 These features aim to make the game more dynamic, customizable, and challenging, enhancing replay value and player engagement.
 
 ---
+## Accessibility
+
+This project was built with accessibility in mind to ensure the game can be enjoyed by a wider audience, including screen reader users. While memory games are visual by nature, several features were implemented to provide alternative feedback.
+
+Screen Reader Support: Score updates, moves, and misses are announced via aria-live. Cards have descriptive ARIA labels indicating flipped/unflipped states.
+- Keyboard & Focus: Cards are focusable with tabindex="0" and can be activated using Enter or Space. Focus styles highlight the selected card, and ARIA states (aria-pressed and aria-label) update dynamically.
+- Semantic HTML: Logical use of `<header>`, `<main>`, `<section>`, and `<footer>` supports navigation.
+- Form Accessibility: Inputs have labels (visually hidden) and live error feedback for invalid submissions.
+- Visual Feedback: High contrast and clear color/size changes indicate score and game status.
+
+Future Improvements: Full keyboard navigation for the board and more descriptive announcements for card matches and mismatches.
+
+---
 
 ## Technologies Used
 
