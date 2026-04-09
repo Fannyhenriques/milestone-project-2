@@ -245,7 +245,7 @@ The game is designed to keep the player informed and motivated. Key elements of 
 
 The game mechanics are designed around matching cards, tracking score, moves, and misses, and providing immediate visual feedback through colors and animations. Below, each feature and logic is described.
 
-#### Navigation / Header
+### Navigation / Header
 The header contains three main elements:
 
 - Logo / Icon – A small stacked card icon that enlarges on hover. Clicking it shows a brief game summary (future: popup with info/settings).
@@ -256,7 +256,7 @@ The header contains three main elements:
 |----------------|----------------|-----------------|
 | <img src="/assets/documentation/header-mobile.png" width="250"> | <img src="/assets/documentation/header-tablet.png" width="300"> | <img src="/assets/documentation/header-desktop.png" width="350"> |
 
-#### Start Form
+### Start Form
 The welcome form lets the player enter their name, chose difficult level and the ammount of cards before starting the game. It includes a heading, an input field, two dropdown menus for selecting difficulty level and card count and a “Start Game” button.
 
 
@@ -267,7 +267,7 @@ The welcome form lets the player enter their name, chose difficult level and the
 When the button is clicked, the startGame function runs. The entered name is stored and used for personalized end messages, such as displaying the player’s score or indicating when they run out of points. The name and settings remain if the player chooses to play again.
 The form prevents the game from starting automatically. In the future, local storage could enable session tracking and a persistent scoreboard.
 
-#### Modals
+### Modals
 The game uses modals to show additional info without leaving the main interface, such as rules or game info.
 
 Rules Modal
@@ -356,7 +356,7 @@ The game ends under two conditions:
 
 In both cases, the endGame() function is triggered, which transitions the interface from the game board to the end screen.
 
-#### Scoreboard
+### Scoreboard
 The scoreboard provides real-time feedback on the player’s performance, tracking moves, misses, and score. 
 
 It consists of three main variables:
@@ -393,7 +393,7 @@ Low score (<30)
 <img src="/assets/documentation/score-low.png" width="500">
 </div>
 
-#### End Screen
+### End Screen
 When the game ends, the interface transitions from the game board to a dedicated end screen, handled by the endGame() function.
 
 The content and animations depend on the outcome:
@@ -415,7 +415,7 @@ Lose scenario
 <img src="/assets/documentation/rainfall.png" width="400">
 </div>
 
-#### Play Again / New Game Buttons
+### Play Again / New Game Buttons
 The game provides two options for restarting: Play Again and New Game, each tied directly to specific JavaScript functions.
 
 Play Again
@@ -443,8 +443,8 @@ New Game
 
 Both buttons ensure a smooth and predictable transition between game states, providing control over restarting while maintaining consistent gameplay logic.
 
-#### Footer
-The footer displays a copyright notice at the bottom of the page.
+### Footer
+The footer is simple and displays a copyright notice at the bottom of the page.
 
 <div align="center">
 <img src="/assets/documentation/footer-desktop.png" width="500">
@@ -462,7 +462,7 @@ The 404 page Displays:
 </div>
 
 ### Future Features
-The game is designed to be scalable, and several enhancements are planned to increase replayability and challenge:
+The game is designed to be scalable, and several enhancements could be implemented to increase replayability and challenge:
 
 Themed Card Sets
 - Allow players to choose from different card themes, such as movies, music, or nature. This would personalize the game experience and make it more visually engaging.
@@ -498,14 +498,13 @@ Core Technologies
 | **CSS**                  | Styling, layout, responsive design, animations (card flips, hover effects, confetti/rain)  |
 | **JavaScript**           | Game logic, card flipping, matching, score tracking, event handling, dynamic UI updates    |
 | **JSON**                 | Storing card data (icons, names) locally                                                   |
-| **Fetch API / Promises** | Asynchronous loading of card data from JSON                                                |
 
 Tools & Resources
 
 | Tool / Resource         | Purpose / Notes                                                                   |
 | ----------------------- | --------------------------------------------------------------------------------- |
 | **Git**                 | Version control for tracking changes                                              |
-| **GitHub**              | Repository hosting, collaboration, and deployment                                 |
+| **GitHub**              | Repository hosting and deployment                                 |
 | **Browser Dev Tools**   | Debugging, inspecting elements, testing responsiveness, monitoring console errors |
 | **Lighthouse**          | Performance, accessibility, SEO, and best practices audit                         |
 | **Silktide**            | Accessibility and web standards testing                                           |
@@ -513,7 +512,7 @@ Tools & Resources
 | **ColorZilla**          | Picking and analyzing colors for UI                                               |
 | **Flaticon**            | Source of icons used on cards                                                     |
 | **Google Fonts**        | Typography for headings and text                                                  |
-| **ChatGPT**             | Assistance with understanding and implementing logic                              |
+| **ChatGPT**             | Assistance with understanding logic	                              |
 
 
 ---
@@ -532,42 +531,39 @@ Tools & Resources
 This project is deployed using GitHub Pages, allowing you to access a live version of the website.
 The following steps summarize the deployment process:
 
-- Initialize and push the project to GitHub
-- - Create the project locally in VS Code (or your preferred editor).
-- - Initialize Git in your project folder:
+1. Initialize and push the project to GitHub
+- Create the project locally in VS Code (or your preferred editor).
+- Initialize Git in your project folder:
 
 	`git init`
 
-- - Add and commit all files: 
+- Add and commit all files: 
 
 	`git add .`
 	`git commit -m "Initial commit"`
 
-- - Create a remote repository on GitHub and push the project to the main branch:
+2. Create a remote repository on GitHub and push the project to the main branch:
+- On GitHub, create a new repository. 
+- Link your local project to the remote repository and push:
 
 	`git remote add origin [repository-url]`
 	`git branch -M main`
 	`git push -u origin main`
 
-- Configure GitHub Pages
-- Navigate to the repository on GitHub.
-- Opened Settings and selected → Pages. 
-- Under Build and deployment, select:
-- - Source: `Deploy from a branch`
-- - Branch: `main`
-- - Folder: `/root`
-- Ensure correct project structure
-- Verifie that an index.html file exists in the root directory.
-- Ensure all file paths (CSS, JavaScript, images) use relative paths.
-- Deploy the project
-- Save the GitHub Pages settings.
-- GitHub will automatically build and host your site.
-- Access the live site
-The project is available at:
-https://<your-username>.github.io/<repository-name>/
+3. Configure GitHub Pages
+Navigate to your repository on GitHub, open Settings → Pages, and under Build and deployment select:
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/root`
 
-- Update the deployment
-- Any changes made locally are pushed to GitHub:
+Make sure your project structure is correct: 
+- an index.html file exists in the root directory
+- all file paths (CSS, JavaScript, images) are relative. 
+- Save the settings, and GitHub will automatically build and host your site.
+
+5. Update the deployment
+- Any changes made locally can be deployed by committing and pushing:
+
 	`git add .`
 	`git commit -m "Update website"`
 	`git push`
