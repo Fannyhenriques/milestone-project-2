@@ -218,8 +218,8 @@ The scoreboard is stacked vertically on mobile and small tablets, and displayed 
 | 480px          | Scoreboard info boxes and end-screen text increase in size; improved readability.                                                                  |
 | 525px          | Gameboard cards grow to 100px with increased gaps; scoreboard switches from vertical stacking to horizontal layout.                                |
 | 576px          | Typography scales up (H1, H2, paragraphs); header margins and nav gaps increase; start form switches to row layout; buttons and modal text larger. |
-| 640px          | Gameboard cards grow to 120px; rules modal max-width increased for better display on tablets.                                                      |                                                                      |
-| 1200px         | Gameboard cards expand to 130px; scoreboard gaps increase for desktop; overall layout more spacious.                                               |
+| 640px          | Gameboard cards grow, rules modal max-width increased for better display on tablets.                                                      |                                                                      |
+| 1200px         | Gameboard cards expand, scoreboard gaps increase for desktop; overall layout more spacious.                                               |
 
 
 The modals (popups) for rules and game info are scrollable and aligned at the top on smaller screens. On taller screens (above 700px in height), modals are centered vertically for a better visual experience.
@@ -239,34 +239,18 @@ The game is designed to keep the player informed and motivated. Key elements of 
 
 ### Current Features & logic
 
-The game mechanics are designed around matching cards, tracking score, moves, and misses, and providing immediate visual feedback through colors and animations. Below, each feature is described in detail.
+The game mechanics are designed around matching cards, tracking score, moves, and misses, and providing immediate visual feedback through colors and animations. Below, each feature and logic is described.
 
 #### Navigation / Header
 The header contains three main elements:
 
-- Logo / Icon – A small image of two cards stacked. On hover, it slightly enlarges to indicate it is clickable. Currently, clicking the logo shows a brief summary of how the game is built; in future versions, it could open a popup with additional information about the game or game settings.
-
-<div align="center">
-<img src="/assets/documentation/memory-logo.png" width="150"> 
-</div>
-
-- Heading (H1) – Positioned in the center, using the playful gradient font to maintain visual identity.
-
-<div align="center">
-<img src="/assets/documentation/font-h1.png" width="250">
-</div>
-
-- Rules Button – Positioned to the right, styled with the secondary color. On hover, the background turns white, and clicking it opens a modal with the game rules.
-
-<div align="center">
-<img src="/assets/documentation/rules-btn.png" width="150">
-</div>
-
-The header and navigation elements are responsive: they scale up or down depending on screen size, but their layout remains consistent across devices.
+- Logo / Icon – A small stacked card icon that enlarges on hover. Clicking it shows a brief game summary (future: popup with info/settings).
+- Heading (H1) – Centered with a playful gradient font for visual identity.
+- Rules Button – Positioned to the right; changes to white on hover and opens a rules modal on click.
 
 | Mobile 				 | Tablet 			  | Desktop 			  |
 |----------------|----------------|-----------------|
-| <img src="/assets/documentation/header-mobile.png" width="200"> | <img src="/assets/documentation/header-tablet.png" width="250"> | <img src="/assets/documentation/header-desktop.png" width="300"> |
+| <img src="/assets/documentation/header-mobile.png" width="250"> | <img src="/assets/documentation/header-tablet.png" width="300"> | <img src="/assets/documentation/header-desktop.png" width="350"> |
 
 #### Welcome Form
 The welcome form allows the player to enter their name before starting the game. 
