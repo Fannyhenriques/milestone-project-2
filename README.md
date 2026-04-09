@@ -623,25 +623,6 @@ Accessibility was considered to ensure the game is usable for a wide range of us
 
 Accessibility testing was performed manually using browser tools and keyboard navigation.
 
-### Error Handling Testing
-
-Error handling was tested to ensure the game behaves predictably in unexpected situations.
-
-The card data is fetched from a local JSON file using a Promise-based request. Error scenarios were simulated to verify that failed requests are properly caught and handled. In such cases, a fallback message is displayed to inform the user that something went wrong.
-User input validation was also tested. The game prevents submission if the player name is too short or empty, ensuring that the game does not start with invalid data.
-
-These checks help improve the overall stability of the application and ensure a smoother user experience even when errors occur.
-
-### Performance Testing
-
-Performance testing was conducted to ensure smooth gameplay and responsive interactions throughout the application.
-
-Animations such as card flipping, confetti bursts, and rain effects were tested to ensure they run smoothly without stuttering or delays.
-Gameplay performance was evaluated during extended interaction, confirming that no noticeable lag occurs when flipping cards or updating the game state.
-Special attention was given to DOM management for dynamic elements. Animation elements (such as confetti and rain drops) are removed after completion to prevent unnecessary DOM buildup and potential performance issues.
-
-Overall, the game performs efficiently, providing a seamless and responsive user experience
-
 ### Responsive Testing
 
 Responsive testing was conducted using browser developer tools across multiple breakpoints, ranging from 320px (mobile) up to 1400px (desktop).
@@ -725,36 +706,31 @@ This approach ensures that the game board is only populated when valid data is a
 During testing, an issue was identified where the score color did not reset when starting a new game. 
 Although the score value was correctly reset to 100, the text remained styled as a “low score” (red) if the previous game ended with a low score.
 
-- Cause:
+### Cause:
 The score styling was controlled by a CSS class (low-score) that was applied when the score dropped below a certain threshold:
 
+```
 scoreEl.classList.toggle("low-score", score < 50);
+```
 
 However, when resetting the game, only the score value (score = 100) was updated. 
 The CSS class was not removed, causing a mismatch between the game state and the UI.
 
-- Solution:
-To fix this, both the data and UI needed to be reset together. 
-A dedicated function, updateScoreUI(), was introduced to handle all score-related UI updates in one place.
+### Solution:
 
-This function:
+A dedicated function, updateScoreUI(), was introduced to handle all score-related UI updates in one place. 
+It:
 - Updates the score text
 - Removes any existing score-related classes
 - Applies the correct class based on the current score
 
-It is now called whenever the score changes and when the game is reset (e.g. in resetGameData()), 
-ensuring that the UI always reflects the correct state.
+This function is now called whenever the score changes and when the game is reset, ensuring the UI always reflects the correct state.
 
-- Key Takeaway:
+### Key Takeaway:
+Updating application state (e.g. score = 100) does not automatically update the UI.
+Visual changes, such as CSS classes, must be handled explicitly.
 
-Updating application state (e.g. score = 100) does not automatically update the UI. Visual changes, such as CSS classes, must be handled explicitly.
-
-By centralizing UI logic in a single function, the code becomes:
-- Easier to maintain
-- Less error-prone
-- More scalable for future features (e.g. additional score levels or styles)
-
-This bug highlighted the importance of keeping related UI logic in one place to ensure consistency between data and presentation.
+Centralizing UI logic improves maintainability, reduces bugs, and makes the code easier to extend.
 
 ### Shuffle Logic for Cards
 During development, an issue was noticed with the card shuffle logic. Initially, the deck was shuffled using a simple Math.random() - 0.5 approach:
@@ -840,7 +816,7 @@ The following resources were used for guidance, inspiration, and understanding c
 
 - Memory game tutorial on [YouTube](https://www.youtube.com/watch?si=7cImLYnXugTWKdZa&v=xWdkt6KSirw&feature=youtu.be)
 
-- Memory game tutorial [article]:(https://medium.com/@funkiefabulous003/how-to-build-a-memory-matching-game-in-javascript-fbe0bf9884a2)
+- Memory game tutorial [article](https://medium.com/@funkiefabulous003/how-to-build-a-memory-matching-game-in-javascript-fbe0bf9884a2)
 
 - Discussions and code reviews were also conducted together with my Code Facilitator during development.
 
