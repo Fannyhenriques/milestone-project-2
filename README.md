@@ -252,22 +252,17 @@ The header contains three main elements:
 |----------------|----------------|-----------------|
 | <img src="/assets/documentation/header-mobile.png" width="250"> | <img src="/assets/documentation/header-tablet.png" width="300"> | <img src="/assets/documentation/header-desktop.png" width="350"> |
 
-#### Welcome Form
-The welcome form allows the player to enter their name before starting the game. 
-It consists of a simple design: an `<h2>` prompt “Enter your name”, an input field, and a “Start Game” button (white with a green hover effect). 
-On mobile devices, the input field and button are stacked vertically, 
-with the button spanning the same width as the input for a balanced look. 
-On tablets and desktops, the input and button are displayed side by side, with the button slightly smaller than the input.
+#### Start Form
+The welcome form lets the player enter their name, chose difficult level and the ammount of cards before starting the game. It includes a heading, an input field, two dropdown menus for selecting difficulty level and card count and a “Start Game” button.
+
 
 | Mobile 				 | Tablet & Desktop 								|
 |----------------|----------------------------------|
 | <img src="/assets/documentation/start-form-mobile.png" width="300"> | <img src="/assets/documentation/start-form-desktop.png" width="350"> |
 
-When the player clicks the button, the startGame function is activated. 
-The name entered in the form is saved as a variable for the duration of the game and used to personalize messages throughout the experience. 
-For example, after clicking “Start Game”, the message “Let’s go, [playerName]!” is displayed above the gameboard. 
-The name is also referenced in the end-of-game message, so the player sees a personalized message whether they win or lose. 
-If the player chooses to play again, the same name is retained, maintaining the personalized experience.
+When the button is clicked, the startGame function runs. The entered name is stored and used for personalized end messages, such as displaying the player’s score or indicating when they run out of points. The name and settings remain if the player chooses to play again.
+The form prevents the game from starting automatically. In the future, local storage could enable session tracking and a persistent scoreboard.
+
 
 <div align="center">
 <img src="/assets/documentation/welcome-message.png" width="300">
