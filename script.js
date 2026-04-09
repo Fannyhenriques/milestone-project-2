@@ -168,8 +168,7 @@ const renderGameBoard = (cardsArray) => {
 	});
 }
 
-// 4. Flip the cards
-// Handles flipping a card, updating moves, and checking for matches
+// 4. Flip the cards, update moves and check for matches
 const flipCard = (card) => {
 	// ignore click if board is locked or card is already flipped... 
 	if (lockBoard || card.classList.contains("flipped")) return;
@@ -194,7 +193,6 @@ const flipCard = (card) => {
 }
 
 // 5. Check if two flipped cards match
-// Compares firstCard and secondCard, updates matches/misses/score, and handles win/lose logic
 const checkMatch = () => {
 	// check if the two selected cards have the same name
 	const isMatch = firstCard.dataset.name === secondCard.dataset.name;
@@ -251,8 +249,7 @@ const checkMatch = () => {
 	updateScoreUI();
 }
 
-// 6. End game (win or lose)
-// Handles showing the end screen, updating final stats, and triggering visual effects
+// 6. End game (win or lose), update final stats and trigger visual effects
 const endGame = (isWin = true) => {
 	setTimeout(() => {
 		// hide the game board and game info
@@ -286,14 +283,12 @@ const endGame = (isWin = true) => {
 }
 
 // 7. Restart / play again
-// Resets the game after a win or loss so the player can play again without going back to start
 const restartGame = () => {
 
 	// hide end screen and show game elements again
 	endScreen.classList.add("hidden");
 	gameBoard.classList.remove("hidden");
 	gameInfo.classList.remove("hidden");
-	welcomeMessage.classList.remove("hidden");
 
 	// remove failure background in case the last game was lost
 	document.body.classList.remove("fail-background");
@@ -344,21 +339,18 @@ const handleCardClick = (e) => {
 // Clears the currently selected cards and unlocks the board
 // Used after checking a match or mismatch
 const resetFlippedCards = () => {
-	[firstCard, secondCard] = [null, null]; // clear selected cards
-	lockBoard = false; // allow clicking new cards
+	[firstCard, secondCard] = [null, null];
+	lockBoard = false;
 }
 
 
-// Shuffling the array of cards  
-// Splits the card array into two halves, shuffles each half, mixes them, and applies safe swaps
-// Returns a shuffled array where matching pairs are not adjacent
+// Shuffling the array of cards; Splits the card array into two halves, shuffles each half, mixes them, and applies safe swaps
 const shuffleCards = (cardArray) => {
 	// Step 1: Split deck into two halves to separate matching pairs
 	const halfA = [...cardArray];
 	const halfB = [...cardArray];
 
-	// Step 2: Fisher–Yates shuffle helper
-	// Shuffles a single array in place
+	// Step 2: Fisher–Yates shuffle helper; shuffles a single array in place
 	const shuffle = arr => {
 		for (let i = arr.length - 1; i > 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
@@ -404,12 +396,10 @@ const shuffleCards = (cardArray) => {
 	return shuffledDeck;
 }
 
-// Update score colors
-// Updates the score displayed on the UI and changes its color based on the value
+// Update score colors and changes its color based on the value
 const updateScoreUI = () => {
-	// Update the score number in the UI
-	scoreEl.innerText = score;
 
+	scoreEl.innerText = score;
 	// Remove any previous score color classes
 	scoreEl.classList.remove("low-score", "medium-score", "moderate-score");
 
