@@ -287,113 +287,68 @@ Modals are managed with CSS and JavaScript: a hidden class toggles visibility an
 
 ### Gameboard
 The gameboard is the main interactive area where the memory match game takes place. 
-It consists of a grid of 12 cards that players can flip to reveal hidden images.
+Depending on ammont of cards chosen it consists of a grid of 12, 16 or 20 cards.
 
 #### Layout:
-The board is implemented as a CSS grid, initially 4×4 cards and is centered on the screen across all devices. 
+The board is implemented as a CSS grid and is centered on the screen. Depending om screen size the grid takes up 3-4 columns and/or 3-5 rows. 
 
-<div style="display: flex; flex-direction: row; gap: 10px; align-items: flex-start;"> 
-    <img src="/assets/documentation/game-board-mobile.png" width="300">
-    <img src="/assets/documentation/game-board-desktop.png" width="350">
-</div>
+- Gameboard mobile:
+
+| 12 Cards                                                         | 16 Cards                                                         | 20 Cards                                                         |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <img src="/assets/documentation/grid-12-mobile.png" width="300"> | <img src="/assets/documentation/grid-16-mobile.png" width="300"> | <img src="/assets/documentation/grid-20-mobile.png" width="300"> |
+
+- Gameboard desktop: 
+
+| 12 Cards                                                          | 16 Cards                                                          | 20 Cards                                                          |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| <img src="/assets/documentation/grid-12-desktop.png" width="300"> | <img src="/assets/documentation/grid-16-desktop.png" width="300"> | <img src="/assets/documentation/grid-20-desktop.png" width="300"> |
+
 
 #### Fetching Card-content (Icons)
 The icons were chosen from the [flaticon library](https://www.flaticon.com/) and stored in a local JSON file. 
-When the game starts, they are loaded using a fetch request, which returns a Promise. The code checks the response for errors before parsing it as JSON, and any errors are caught to display a message to the user. I chose a Promise-based fetch instead of async/await because the file is small and local, making this approach simple. However the async/await could also be used to make the execution order even clearer. 
+When the game starts, they are loaded using a fetch request, which returns a Promise. The code checks the response for errors before parsing it as JSON, and any errors are caught to display a message to the user. Promise-based fetch was chosen instead of async/await because the file is small and local, making this approach simple. However the async/await could also be used to make the execution order even clearer. 
 
 #### Shuffling Logic
-To create a fair and unpredictable game, the card deck is shuffled using a multi-step approach.
+To create a fair and unpredictable game, the card deck is shuffled in multiple steps.
 
-1. First, the original array of cards is duplicated to create pairs, ensuring that each card has exactly one matching counterpart. 
-
-	`const halfA = [...cardArray]; `<br>`
- 	const halfB = [...cardArray];`
-
-2. These two arrays are then shuffled independently using the Fisher–Yates algorithm, which provides an efficient and unbiased randomization.
-
-	`for (let i = arr.length - 1; i > 0; i--) { `<br>`
-	const j = Math.floor(Math.random() * (i + 1)); `<br>`
-	[arr[i], arr[j]] = [arr[j], arr[i]];
-	}`
-
+1. The original card array is duplicated to form pairs.
+2. These two arrays are then shuffled independently using the Fisher–Yates algorithm.
 3. After shuffling, the two halves are interleaved into a single deck. 
+4. Additional random swaps are performed to prevent predictable patterns. This reduces the likelihood of matching cards being placed directly next to each other.
 
-	`if (Math.random() < 0.5) { `<br>`
-  shuffledDeck.push(halfA[i], halfB[i]);`<br>`
-	} else {`<br>>
-  	shuffledDeck.push(halfB[i], halfA[i]);
-	}`
+The purpose of this is to keep the deck random and well-balanced for a fun game.
 
-4. To further improve randomness and avoid predictable patterns, an additional step performs random swaps across the deck. This reduces the likelihood of matching cards being placed directly next to each other.
+#### Rendering Cards & card flipping
+Once the card data has been fetched and shuffled, the game board is dynamically generated.
 
-	`if (
-  	shuffledDeck[i] !== shuffledDeck[j] && `<br>`
-  	shuffledDeck[i] !== shuffledDeck[j-1] && `<br>`
-  	shuffledDeck[j] !== shuffledDeck[i+1]`<br>`
-	) { `<br>`
-  	[shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
-	}`
-
-This layered approach ensures a balanced distribution of cards while maintaining a high level of randomness, resulting in a more engaging gameplay experience.
-
-#### Rendering Cards
-Once the card data has been fetched and shuffled, the game board is dynamically generated using JavaScript.
-
-- Each card is created as a set of nested DOM elements representing the front and back sides. 
-- The card’s identity is stored using a data attribute, making it easy to compare cards later in the game logic.
-- For every card in the shuffled array, a new card element is constructed and appended to the game board. 
-- An event listener is also attached to each card, allowing it to respond to user interaction by triggering the flip behavior.
-
-By generating the cards dynamically instead of hardcoding them in HTML, the game becomes more flexible and scalable, making it easier to update or expand in the future.
-
-#### Card Mechanics and card flipping
-Each card consists of two sides: a front and a back. The back displays a gradient design, while the front reveals the card’s icon. 
-This structure is implemented using nested elements and styled with CSS 3D transforms to create a smooth flip animation.
-
-Visual feedback plays an important role in guiding the user: 
-- Hovering over a card slightly scales it up to indicate interactivity, while clicking (or focusing) triggers the flip effect, revealing the card’s content.
+- The game board is dynamically generated after fetching and shuffling the card data.
+- Each card is a nested DOM element with front and back; the back shows a gradient, the front displays the icon.
+- Card identity is stored in a data attribute for easy comparison.
+- Hovering slightly scales the card to indicate interactivity; clicking or focusing flips it.
+- Flip behavior is handled by toggling a flipped class in JavaScript.
+- The system tracks the first and second selected cards.
+- A lockBoard mechanism prevents flipping more than two cards at once.
 
 <div align="center">
 <img src="/assets/documentation/flip-nomatch.png" width="400">
 </div>
 
-- The flip behavior is controlled through JavaScript by toggling a flipped class on the selected card. 
-- To maintain consistent game logic, the system keeps track of the first and second selected cards. 
-- A locking mechanism (lockBoard) is used to temporarily disable interaction while two cards are being evaluated, preventing the player from flipping more than two cards at once.
-
-This combination of visual feedback and controlled interaction ensures a smooth and intuitive gameplay experience.
-
 #### Matching Logic:
-Once two cards have been flipped, the game evaluates whether they form a matching pair.
-
-Each card stores its identity using a data-name attribute. 
-The comparison is handled in the checkMatch() function, where the values of the two selected cards are checked against each other.
-
-If the cards match, they remain flipped, and a visual indicator is applied by adding a matched class, changing their appearance (light green) to signal success. The match counter is also increased, bringing the player closer to completing the game.
+When two cards are flipped, their data-name attributes are compared in checkMatch().
+- No match: A miss is registered, the score decreases, and the cards flip back after a short delay; the board is locked during this time to prevent extra flips.
+- Match: Cards stay flipped, a matched class highlights them (light green), and the match counter increases.
 
 <div align="center">
 <img src="/assets/documentation/flip-match.png" width="400">
 </div>
 
-If the cards do not match, the game registers a miss. The score is reduced, and after a short delay, both cards are flipped back to their original state. During this delay, the board is temporarily locked to prevent additional interactions, ensuring that only two cards can be evaluated at a time.
-
-This logic creates a clear feedback loop for the player, reinforcing successful matches while maintaining challenge through penalties for incorrect guesses.
-
-#### Reset Logic
-After each turn, the game resets the selected card state to prepare for the next interaction. This is handled by the resetFlippedCards() function.
-
-Clears the references to the currently selected cards (firstCard and secondCard)
-Unlocks the board by resetting the lockBoard variable
-Ensures the player can continue interacting without unintended behavior
-
-By explicitly resetting the game state after each evaluation, the logic remains predictable and prevents errors such as comparing incorrect cards or blocking further input.
-
-#### Game End Condition
+#### Reset Logic & End Game Condition
+After each turn, the game resets the selected card state to prepare for the next interaction. 
 The game ends under two conditions:
 
-Win: All card pairs have been successfully matched
-Detected in checkMatch() when matches === cards.length
-Loss: The player runs out of points (score reaches zero)
+- Win: All card pairs have been successfully matched 
+- Loss: The player runs out of points (score reaches zero)
 
 In both cases, the endGame() function is triggered, which transitions the interface from the game board to the end screen.
 
@@ -405,41 +360,34 @@ It consists of three main variables:
 - misses – counts incorrect matches.
 - score – starts at 100 and decreases by 5 for each miss.
 
-Desktop: 
-<div align="center">
-<img src="/assets/documentation/scoreboard-desktop.png" width="400">
-</div>
+| Desktop                                                                                        | Mobile                                                                                        |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| <div align="center"><img src="/assets/documentation/scoreboard-desktop.png" width="400"></div> | <div align="center"><img src="/assets/documentation/scoreboard-mobile.png" width="400"></div> |
 
-Mobile:
-<div align="center">
-<img src="/assets/documentation/scoreboard-mobile.png" width="400">
-</div>
 
-These variables are dynamically updated in the UI using the corresponding DOM elements (movesEl, missesEl, scoreEl). 
+These variables are dynamically updated in the UI using the corresponding DOM elements. 
 Every time a move is made or a miss occurs, the updateScoreUI() function is called to reflect the current state.
+The player earns 5+ points for each successful match.
 
 To enhance feedback, the score element changes color at certain thresholds:
 
 Moderate score (70–50):
 
 <div align="center">
-<img src="/assets/documentation/score-moderate.png" width="400">
+<img src="/assets/documentation/score-moderate.png" width="500">
 </div>
 
 Medium score (50–30)
 
 <div align="center">
-<img src="/assets/documentation/score-medium.png" width="400">
+<img src="/assets/documentation/score-medium.png" width="500">
 </div>
 
 Low score (<30)
 
 <div align="center">
-<img src="/assets/documentation/score-low.png" width="400">
+<img src="/assets/documentation/score-low.png" width="500">
 </div>
-
-This visual cue allows players to quickly assess their performance and motivates careful matching. 
-By combining numeric feedback with color indicators, the scoreboard creates an engaging and informative layer of game interaction.
 
 #### End Screen
 When the game ends, the interface transitions from the game board to a dedicated end screen, handled by the endGame() function.
