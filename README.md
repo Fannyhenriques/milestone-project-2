@@ -656,7 +656,9 @@ All core components were verified to maintain a consistent and functional layout
 - Modals
 - Footer
 
-The layout adapts smoothly between mobile, tablet, and desktop views, ensuring a balanced and accessible user experience.
+The layout adapts smoothly between mobile, tablet, and desktop views. However, due to variations in grid sizes, the responsiveness could be further improved—particularly in terms of spacing and gaps.
+
+With more time, the grid layouts could transition more seamlessly between breakpoints, especially on mobile devices and certain tablet sizes. 
 
 ### Lighhouse
 
@@ -667,6 +669,12 @@ Lighthouse testing was performed to evaluate performance, accessibility, best pr
 </div>
 
 Due to the interactive nature of the application and its reliance on JavaScript, full Lighthouse testing across all game states was limited. However, manual testing was used to verify functionality and performance during active gameplay.
+
+Lighthouse testing was also performed for the 404 page: 
+
+<div align="center">
+<img src="/assets/documentation/lighthouse-404.png" width="500">
+</div>
 
 ### Browser Testing
 The following browsers were used during testing:
@@ -697,7 +705,7 @@ Initial warnings were related to ES6 syntax. After specifying ES6 usage, the cod
 
 ### Bugs & Fixes
 
-#### cardsArray
+### cardsArray
 During development, an issue occurred where the game board failed to render correctly. 
 This was caused by attempting to use the cardsArray variable in the global scope before it had been defined. Since the card data is fetched asynchronously from a JSON file, the rendering logic was executed before the data was available, resulting in a ReferenceError and an empty or broken game board.
 
@@ -713,7 +721,7 @@ As part of this solution:
 
 This approach ensures that the game board is only populated when valid data is available, resolving both the undefined variable error and the issue of cards not rendering correctly.
 
-#### Score UI Not Resetting
+### Score UI Not Resetting
 During testing, an issue was identified where the score color did not reset when starting a new game. 
 Although the score value was correctly reset to 100, the text remained styled as a “low score” (red) if the previous game ended with a low score.
 
