@@ -828,6 +828,26 @@ This has been identified during responsive testing and is planned to be fixed in
 
 ## Credits
 
+### Icons 
+
+Icons used in the game (both for the cards and logo) were sourced from [Flaticon](https://www.flaticon.com/)
+
 ### Code
 
-### Content
+The following resources were used for guidance, inspiration, and understanding core concepts while building the game:
+
+- Code Institute – course material, videos, and guidance
+
+- Memory game tutorial on [YouTube](https://www.youtube.com/watch?si=7cImLYnXugTWKdZa&v=xWdkt6KSirw&feature=youtu.be)
+
+- Memory game tutorial [article]:(https://medium.com/@funkiefabulous003/how-to-build-a-memory-matching-game-in-javascript-fbe0bf9884a2)
+
+- Discussions and code reviews were also conducted together with my Code Facilitator during development.
+
+- Fisher yates shuffle: was implemented based on this [resource] 
+(https://dev.to/tanvir_azad/fisher-yates-shuffle-the-right-way-to-randomize-an-array-4d2p). 
+Additionally, ChatGPT was used as a support tool to better understand the underlying logic and reasoning behind the algorithm before implementing it in code.
+
+### Design
+
+The design was partley inspired by the [Swaplett project](https://github.com/lowrycode/swaplett-project)
