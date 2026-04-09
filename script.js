@@ -255,7 +255,6 @@ const endGame = (isWin = true) => {
 		// hide the game board and game info
 		gameBoard.classList.add("hidden");
 		gameInfo.classList.add("hidden");
-		welcomeMessage.classList.add("hidden");
 		// show the end screen
 		endScreen.classList.remove("hidden");
 

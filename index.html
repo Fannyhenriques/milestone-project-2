@@ -55,11 +55,21 @@
 				</p>
 
 				<p>
-					If the cards match, they turn green and stay face up. If not, they will flip back over.
+					If the cards match, they turn green and stay face up. If not, they flip back over.
 				</p>
 
 				<p>
-					You start the game with 100 points. Each time you miss a pair, you lose 5 points.
+					You start the game with 100 points. Each correct match gives you <strong>+5 points.</strong>
+					Missing a pair costs points depending on difficulty:
+					<br>
+					<strong>Easy:</strong> -5 points, longer time to view cards;
+					<br>
+					<strong>Medium:</strong> -10 points, shorter view time;
+					<br>
+					<strong>Hard:</strong> -10 points, very short view time.
+				</p>
+				<p>
+					You can also choose the number of cards to increase the challenge.
 				</p>
 				<p>
 					Pay attention to your score: the color changes as your points drop (from <span class="rules-green"> green
@@ -108,6 +118,7 @@
 				<button type="submit" class="btn">Start Game</button>
 			</form>
 
+			<p id="form-error" class="error-message" aria-live="polite"></p>
 		</section>
 
 		<h2 id="welcome-message" class="hidden" aria-live="polite"></h2>
