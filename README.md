@@ -460,18 +460,14 @@ The 404 page Displays:
 ### Future Features
 The game is designed to be scalable, and several enhancements are planned to increase replayability and challenge:
 
-Difficulty Levels
-- Introduce multiple difficulty settings that affect the number of cards on the board (e.g., 12, 16, 18, or 20 cards). Higher difficulty levels could include more pairs and faster-paced gameplay.
 Themed Card Sets
 - Allow players to choose from different card themes, such as movies, music, or nature. This would personalize the game experience and make it more visually engaging.
+
 Timed Mode
 - Add a countdown timer or stopwatch to track how long it takes players to complete the game. Completing the game faster could award bonus points, adding a competitive element.
-Variable Starting Score
-- Implement a difficulty-based starting score, such as 70 or 50 points, to make higher difficulty levels more challenging. Combined with the miss penalty, this would require more strategic matching.
+
 Persistent Score Tracking
 - Use local storage or a backend to save high scores and player progress, enabling players to compete with themselves or others over multiple sessions.
-
-These features aim to make the game more dynamic, customizable, and challenging, enhancing replay value and player engagement.
 
 ---
 ## Accessibility
