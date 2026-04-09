@@ -2,9 +2,13 @@
 
 Memory Match is a classic memory game where players flip over cards to find matching pairs. The game is designed with a playful, child-friendly aesthetic, making it appealing to players of all ages. Players click on two cards at a time: if the cards match, they remain face-up; if they do not match, they are turned back over.
 
-The scoring system starts each game at 100 points, with 5 points subtracted for each mismatch. Players are encouraged to remember card positions carefully to maintain a high score.
+The scoring system starts each game at 100 points, with 5 or 10 points subtracted for each mismatch. Players are encouraged to remember card positions carefully to maintain a high score.
 
-[View live project here:]
+<div align="center">
+<img src="/assets/documentation/amiresponsive.png" width="600">
+</div>
+
+[View live project here](https://fannyhenriques.github.io/milestone-project-2/)
 
 ---
 
