@@ -665,8 +665,7 @@ The following browsers were used during testing:
 - Mozilla Firefox
 - Apple Safari
 
-Verified consistent functionality across browsers
-Minor issue found in Safari where emojis were not displayed
+Verified consistent functionality across browsers. However, in Safari, the select dropdown menus appear differently compared to other browsers. This has been noted as a known issue.
 
 ### Code Validation
 
@@ -796,9 +795,14 @@ This final approach creates a more balanced and enjoyable experience where playe
 
 ## Known Bugs
 
-Minor responsiveness inconsistencies in the game board layout (spacing and grid scaling across certain breakpoints).
+- Minor responsiveness inconsistencies in the game board layout (spacing and grid scaling across certain breakpoints).
 The functionality remains intact, but the visual layout could be improved for a more seamless experience across all screen sizes.
 This has been identified during responsive testing and is planned to be fixed in a future update.
+
+- Select dropdown menus appear differently in Safari compared to other browsers.
+This is due to default browser styling and limited support for customizing native select elements.
+The functionality remains unaffected, but the visual appearance is inconsistent.
+This was identified during browser testing and may be improved in future updates.
 
 ---
 
