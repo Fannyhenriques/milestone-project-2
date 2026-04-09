@@ -72,16 +72,17 @@ The design focuses on clarity and ease of use, while still offering a small leve
 
 ### Player Goals
 
-As a player I want to: 
-- Quickly understand how the game works
-- Start the game easily and without friction
-- Play in a clean and non-distracting interface
-- Be able to access rules or instructions at any time
-- Track performance through moves, misses, and score
-- Feel motivated through visual feedback (e.g. score changes)
-- Improve memory and achieve a higher score
-- Replay the game to try to perform better
-- Allow a new player to start a fresh game
+1. Understand how the game works through clear instructions before or during gameplay
+2. Choose a difficulty level to adjust the challenge
+3. Choose the number of cards to adjust the challenge
+4. Start the game easily by entering my name and clicking a start button
+5. See clear visual feedback when two cards match or do not match
+6. Be able to access rules or instructions at any time
+7. Track my performance through score, moves, or misses displayed on screen
+8. See visual feedback when my score changes
+9. See a clear end result (win/lose) with feedback based on my performance
+10. Replay the game to try to perform better
+11. Restart the game as the same or a new player and change difficulty and/or number of cards
 
 ### Game flow goals
 
@@ -89,6 +90,7 @@ The following describes the expectation of how the user moves through the game a
 
 1. Start Screen
 - User enters their name
+- User choose level and ammount of cards
 - User clicks the start button
 
 2. Game Begins
