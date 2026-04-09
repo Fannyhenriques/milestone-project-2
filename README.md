@@ -135,18 +135,17 @@ Colours and animations are used to enhance the user experience and provide feedb
 such as the score changing colour as it decreases and different animations depending on whether the player wins or loses. 
 The overall goal was to balance playfulness with clarity, ensuring that important information is always easy to see.
 
-### Layout
+### Wireframes
 Initial layouts were planned using Lucidchart for mobile, tablet, and desktop to ensure a responsive structure across different devices.
 
-<div style="display: flex; flex-direction: row; gap: 10px; align-items: flex-start;"> 
+<div style="display: flex; flex-direction: row; gap: 20px; align-items: flex-start;"> 
 <img src="/assets/documentation/wireframe-desktop.png" width="300"> 	  
-<img src="/assets/documentation/wireframe-tablet.png" width="250"> 
-<img src="/assets/documentation/wireframe-mobile.png" width="200">
+<img src="/assets/documentation/wireframe-tablet.png" width="200"> 
+<img src="/assets/documentation/wireframe-mobile.png" width="150">
 </div>
 
-The layout is structured to guide the user through the game in a clear and intuitive way.
 - A header contains the game title, logo, and access to the rules
-- The start screen allows the user to enter their name before beginning the game
+- The start screen allows the player to enter their name and select a difficulty level before starting the game
 - The game board is centered on the page to maintain focus
 - Game information such as moves, misses, and score is displayed clearly below the board
 - An end screen appears after the game finishes, showing the result and options to restart or start a new game
@@ -157,25 +156,23 @@ The color palette is divided into three groups, each serving a specific purpose:
 1. **Base Colors** – These are neutral colors used for the background, text, borders, and surfaces. They provide contrast and ensure readability, making sure important information stands out against the background.
 
 <div align="center">
-<img src="/assets/documentation/base-colors.png" width="400">
+<img src="/assets/documentation/base-colors.png" width="600">
 </div>
 
 2. **Game-Enhancing Colors** – These colors are inspired by the logo and used to create a fun, playful feel. For example, gradients on the H1 heading and card fronts, hover effects on buttons, footer background, and the score/moves/misses display in the scoreboard. The secondary color is extracted directly from the logo using a color picker, ensuring a consistent visual identity across the interface. The aim was to consistently reuse colors across elements so that the interface feels cohesive and visually engaging.
 
 <div align="center">
-<img src="/assets/documentation/game-colors.png" width="400">
+<img src="/assets/documentation/game-colors.png" width="600">
 </div>
 
 3. **Feedback Colors** – These colors provide visual feedback based on game events. For example, the scoreboard colors gradually change as points decrease, and matched cards briefly turn green to indicate success. This helps players intuitively understand their performance without needing extra text instructions. The cards also get a lightgreen backgroundcolor when matched.
 
 <div align="center">
-<img src="/assets/documentation/feedback-colors.png" width="400">
+<img src="/assets/documentation/feedback-colors.png" width="600">
 </div>
 
-Overall, the palette was chosen to balance **playfulness** with **clarity**, ensuring the game is visually appealing while keeping important information easy to notice.
-
 ### Typography
-Two fonts were chosen to create a balance between readability and playfulness. "Varela" is used for body text and interface elements, providing a simple style that doesn’t distract from gameplay. "Bangers" is used for the H1 heading, giving a fun feel to the logo and main titles. Both fonts were selected from Google Fonts to ensure web compatibility and a consistent look across devices.
+Two fonts were chosen to create a balance between readability and playfulness. "Varela" is used for body text and interface elements, providing a simple style that doesn’t distract from gameplay. "Bangers" is used for the H1 heading, giving a fun feel to the logo and main titles. Both fonts were selected from [Google Fonts](https://fonts.google.com/).
 
 Body font: Varela
 
