@@ -48,7 +48,6 @@ let flipBackDelay = 1000;
 let selectedCardCount = 16;
 
 let cards = [];
-
 let matches = 0;
 
 // =======================
@@ -129,6 +128,12 @@ const renderGameBoard = (cardsArray) => {
 		cardElement.classList.add("card");
 		cardElement.dataset.name = card.name; // store card name for matching
 
+		// Accessability: making the cards semantic
+		cardElement.setAttribute("role", "button");
+		cardElement.setAttribute("tabindex", "0");
+		cardElement.setAttribute("aria-label", "Memorycard, face down");
+		cardElement.setAttribute("aria-pressed", "false");
+
 		// inner wrapper for front/back
 		const cardInner = document.createElement("div");
 		cardInner.classList.add("card-inner");
@@ -154,6 +159,12 @@ const renderGameBoard = (cardsArray) => {
 
 		// add click listener to handle card flip
 		cardElement.addEventListener("click", handleCardClick);
+		cardElement.addEventListener("keydown", (e) => {
+			if ((e.key === "Enter" || e.key === " ") && !e.repeat) {
+				e.preventDefault();
+				handleCardClick(e);
+			}
+		});
 	});
 }
 
@@ -164,6 +175,9 @@ const flipCard = (card) => {
 	if (lockBoard || card.classList.contains("flipped")) return;
 	// ...otherwise; trigger flip card animation
 	card.classList.add("flipped");
+	//accessability
+	card.setAttribute("aria-label", `Card: ${card.dataset.name}`);
+	card.setAttribute("aria-pressed", "true");
 
 	// if no first card is selected, mark this card as firstCard
 	if (!firstCard) {
@@ -223,8 +237,15 @@ const checkMatch = () => {
 		setTimeout(() => {
 			firstCard.classList.remove("flipped");
 			secondCard.classList.remove("flipped");
+			//Accessabiliby
+			firstCard.setAttribute("aria-label", "Memory card, face down");
+			secondCard.setAttribute("aria-label", "Memory card, face down");
+
+			firstCard.setAttribute("aria-pressed", "false");
+			secondCard.setAttribute("aria-pressed", "false");
+
 			resetFlippedCards();
-		}, 1000);
+		}, flipBackDelay);
 	}
 	// update the score color and increment points in UI
 	updateScoreUI();
@@ -314,8 +335,8 @@ const newGame = () => {
 // Triggered when a card on the board is clicked
 // Calls flipCard to handle flipping and matching logic
 const handleCardClick = (e) => {
-	const card = e.currentTarget; // get the clicked card
-	flipCard(card); // flip it and handle match checking
+	const card = e.currentTarget;
+	flipCard(card);
 };
 
 
