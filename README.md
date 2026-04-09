@@ -578,18 +578,21 @@ GitHub Pages will automatically rebuild and deploy the latest version.
 
 Each user story was tested to ensure the expected outcome was achieved. See result below:
 
-| User Story                                    | Expected Outcome                                       | Result |
-| --------------------------------------------- | ------------------------------------------------------ | ------ |
-| Quickly understand how the game works         | Clear layout, visible UI, and accessible rules         |  Pass  |
-| Start the game easily and without friction    | User can enter name and start game without issues      |  Pass  |
-| Play in a clean and non-distracting interface | Minimal UI with clear focus on game board              |  Pass  |
-| Access rules or instructions at any time      | Rules modal opens/closes correctly                     |  Pass  |
-| Track performance (moves, misses, score)      | Values update in real-time during gameplay             |  Pass  |
-| Feel motivated through visual feedback        | Score changes color based on thresholds                |  Pass  |
-| Improve memory and achieve a higher score     | Game logic supports repeated play and scoring          |  Pass  |
-| Replay the game to perform better             | “Play Again” restarts game correctly                   |  Pass  |
-| Allow a new player to start fresh             | “New Game” resets all data and returns to start screen |  Pass  |
+### User Story Testing
 
+| User Story | Expected Outcome / Result | Screenshot(s) |
+| ---------- | ------------------------ | ------------- |
+| 1. Understand how the game works through clear instructions before or during gameplay | Clear layout, visible UI, instructions accessible | <div align="center"><img src="/assets/documentation/rules-modal.png" width="150"></div> |
+| 2. Choose a difficulty level to adjust the challenge | Difficulty selector works and updates game appropriately | <div align="center"><img src="/assets/documentation/user-story-2.png" width="150"></div> |
+| 3. Choose the number of cards to adjust the challenge | Card count selection works and board updates correctly | <div align="center"><img src="/assets/documentation/user-story-3.png" width="300"></div> |
+| 4. Start the game easily by entering my name and clicking a start button | User can enter name and start game without issues | <div align="center"><img src="/assets/documentation/user-story-4-btn.png" width="300"></div><div align="center"><img src="/assets/documentation/user-story-4-board.png" width="300"></div> |
+| 5. See clear visual feedback when two cards match or do not match | Matching cards stay flipped, non-matching flip back, score updates | <div align="center"><img src="/assets/documentation/user-story-5-nomatch.png" width="300"></div><div align="center"><img src="/assets/documentation/user-story-5-match.png" width="300"></div> |
+| 6. Be able to access rules or instructions at any time | Rules modal opens/closes correctly | <div align="center"><img src="/assets/documentation/user-story-6.png" width="300"></div> |
+| 7. Track my performance through score, moves, or misses displayed on screen | Values update in real-time during gameplay | <div align="center"><img src="/assets/documentation/user-story-7.png" width="300"></div> |
+| 8. See visual feedback when my score changes | Score changes color based on thresholds | <div align="center"><img src="/assets/documentation/user-story-8-60.png" width="300"></div><div align="center"><img src="/assets/documentation/user-story-8-40-png.png" width="300"></div><div align="center"><img src="/assets/documentation/user-story-8-20.png" width="300"></div> |
+| 9. See a clear end result (win/lose) with feedback based on my performance | End screen appears with final score, moves, misses | <div align="center"><img src="/assets/documentation/confetti.png" width="300"></div><div align="center"><img src="/assets/documentation/rainfall.png" width="300"></div> |
+| 10. Replay the game to try to perform better | “Play Again” restarts game correctly | <div align="center"><img src="/assets/documentation/play-again.png" width="300"></div> |
+| 11. Restart the game as the same or a new player and change difficulty and/or number of cards | “New Game” resets everything and allows updated settings | <div align="center"><img src="/assets/documentation/new-game-png.png" width="300"></div> |
 
 Each game-flow goal was tested based on user flows, see result below: 
 
