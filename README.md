@@ -502,6 +502,11 @@ Accessibility was considered throughout the development of this project to ensur
 - More descriptive announcements for card matching and mismatches
 
 #### Footer
+The footer displays a copyright notice at the bottom of the page.
+
+<div align="center">
+<img src="/assets/documentation/footer-desktop.png" width="300">
+</div>
 
 ### Future Features
 The game is designed to be scalable, and several enhancements are planned to increase replayability and challenge:
