@@ -87,7 +87,24 @@
 			<form id="start-form" class="start-form">
 				<label for="player-name" class="visually-hidden">Your name</label>
 				<input type="text" id="player-name" aria-labelledby="name-heading" placeholder="Your name" required
-					minlength="2">
+					minlength="2" aria-describedby="form-error">
+
+				<label for="difficulty" class="visually-hidden">Choose difficulty</label>
+				<select id="difficulty" required>
+					<option value="" disabled selected hidden>Choose Level</option>
+					<option value="easy">Easy</option>
+					<option value="medium">Medium</option>
+					<option value="hard">Hard</option>
+				</select>
+
+				<label for="card-count" class="visually-hidden">Number of cards</label>
+				<select id="card-count" required>
+					<option value="" disabled selected hidden>Number of Cards</option>
+					<option value="12">12 cards</option>
+					<option value="16">16 cards</option>
+					<option value="20">20 cards</option>
+				</select>
+
 				<button type="submit" class="btn">Start Game</button>
 			</form>
 
