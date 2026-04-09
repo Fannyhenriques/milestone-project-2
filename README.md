@@ -517,13 +517,6 @@ Tools & Resources
 
 ---
 
-## Development Process
-
-- MVP
-- sketch of functions
-- ISSUES/CHECKLIST
----
-
 ## Deployment
 
 #### Deployment with GitHub Pages
@@ -576,7 +569,7 @@ GitHub Pages will automatically rebuild and deploy the latest version.
 
 ### Manual Testing
 
-Each user story was tested to ensure the expected outcome was achieved. See result below:
+Each user story and Game goal was tested to ensure the expected outcome was achieved. All passed, see screenshots below: 
 
 ### User Story Testing
 
@@ -594,47 +587,27 @@ Each user story was tested to ensure the expected outcome was achieved. See resu
 | 10. Replay the game to try to perform better | “Play Again” restarts game correctly | <div align="center"><img src="/assets/documentation/play-again.png" width="300"></div> |
 | 11. Restart the game as the same or a new player and change difficulty and/or number of cards | “New Game” resets everything and allows updated settings | <div align="center"><img src="/assets/documentation/new-game-png.png" width="300"></div> |
 
-Each game-flow goal was tested based on user flows, see result below: 
 
-| Step            | Action                   | Expected Outcome                          | Result |
-| --------------- | ------------------------ | ----------------------------------------- | ------ |
-| Start Screen    | Enter name + click start | Game initializes and UI updates           |  Pass  |
-| Game Begins     | Cards displayed          | Cards are shuffled and shown face down    |  Pass  |
-| Gameplay        | Click one card           | Card flips                                |  Pass  |
-| Gameplay        | Click second card        | Second card flips                         |  Pass  |
-| Matching        | Cards match              | Cards stay flipped and marked as matched  |  Pass  |
-| Matching        | Cards do not match       | Cards flip back and score decreases       |  Pass  |
-| Feedback        | Ongoing play             | Moves, misses, and score update correctly |  Pass  |
-| Feedback        | Low score                | Score changes color                       |  Pass  |
-| Game End (Win)  | All pairs matched        | End screen with stats appears             |  Pass  |
-| Game End (Lose) | Score reaches 0          | Lose message and animation shown          |  Pass  |
-| Replay          | Click “Play Again”       | Game restarts with same player            |  Pass  |
-| New Game        | Click “New Game”         | Returns to start screen and resets data   |  Pass  |
+### Functionality & Edge Case Testing
 
+Manual testing was performed to ensure all core game features and edge cases behave as expected:
 
-Edge cases:
-
-- Rapid clicking on multiple cards → prevented by lockBoard
-- Double-clicking the same card → ignored
-- Submitting empty or short name → prevented
-- Clicking outside modals → closes correctly
-
-
-### Functionality Testing
-
-Manual testing was performed for the core game logic to ensure all features behave as expected:
-
-| Feature                | Expected Outcome                                                  | Result |
-| ---------------------- | ----------------------------------------------------------------- | ------ |
-| Card Flipping          | Cards flip correctly when clicked                                 |  Pass  |
-| Card Selection Limit   | Only two cards can be flipped at a time (`lockBoard`)             |  Pass  |
-| Matching Logic (Match) | Matching cards stay flipped and are marked as matched             |  Pass  |
-| Matching Logic (Miss)  | Non-matching cards flip back after a short delay                  |  Pass  |
-| Score Tracking         | Moves, misses, and score update correctly                         |  Pass  |
-| Win Condition          | Game ends when all pairs are matched (`matches === cards.length`) |  Pass  |
-| Lose Condition         | Game ends when score reaches 0 (`score <= 0`)                     |  Pass  |
-| Play Again             | Game resets board and score but keeps player name                 |  Pass  |
-| New Game               | Game resets completely and returns to start screen                |  Pass  |
+| Feature / Edge Case                         | Expected Behavior                                                 | Result |
+| ------------------------------------------- | ----------------------------------------------------------------- | ------ |
+| Card Flipping                               | Cards flip correctly when clicked                                 | Pass   |
+| Card Selection Limit                        | Only two cards can be flipped at a time (`lockBoard`)             | Pass   |
+| Matching Logic (Match)                      | Matching cards stay flipped and are marked as matched             | Pass   |
+| Matching Logic (Miss)                       | Non-matching cards flip back after a short delay                  | Pass   |
+| Score Tracking                              | Moves, misses, and score update correctly                         | Pass   |
+| Win Condition                               | Game ends when all pairs are matched (`matches === cards.length`) | Pass   |
+| Lose Condition                              | Game ends when score reaches 0 (`score <= 0`)                     | Pass   |
+| Play Again                                  | Game resets board and score but keeps player name                 | Pass   |
+| New Game                                    | Game resets completely and returns to start screen                | Pass   |
+| Rapid clicking on multiple cards            | Only two cards can be flipped at a time (`lockBoard`)             | Pass   |
+| Double-clicking the same card               | Second click ignored                                              | Pass   |
+| Submitting empty/short name                 | Form prevents submission                                          | Pass   |
+| Not selecting difficulty level or grid size | Cannot start game until both are chosen                           | Pass   |
+| Clicking outside modals                     | Modal closes correctly                                            | Pass   |
 
 
 ### Accessibility Testing
