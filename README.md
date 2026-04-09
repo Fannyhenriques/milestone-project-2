@@ -820,7 +820,10 @@ This final approach creates a more balanced and enjoyable experience where playe
 
 ## Known Bugs
 
-- emojis not loading in safari
+Minor responsiveness inconsistencies in the game board layout (spacing and grid scaling across certain breakpoints).
+The functionality remains intact, but the visual layout could be improved for a more seamless experience across all screen sizes.
+This has been identified during responsive testing and is planned to be fixed in a future update.
+
 ---
 
 ## Credits
