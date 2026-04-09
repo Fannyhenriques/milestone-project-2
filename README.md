@@ -177,24 +177,22 @@ Two fonts were chosen to create a balance between readability and playfulness. "
 Body font: Varela
 
 <div align="center">
-<img src="/assets/documentation/font-body.png" width="400">
+<img src="/assets/documentation/font-body.png" width="500">
  </div>
 
 Heading font (H1): Bangers
 
 <div align="center">
-<img src="/assets/documentation/font-h1.png" width="400">
+<img src="/assets/documentation/font-h1.png" width="500">
 </div>
 
 ### Icons
-The icons were selected from the Flaticon library with a focus on clarity, playfulness, and broad recognition. The goal was to create a visual style that feels lighthearted and accessible to players of all ages.
+The icons were selected from the Flaticon library with a focus on clarity, playfulness, and broad recognition. The goal was to create a visual style that is accessible to players of all ages and contributes to a playful user experience.
 
-To achieve this, the icons represent a mix of familiar everyday objects—such as a dog, apple, and cupcake—combined with more fun and imaginative elements like a dinosaur and a wizard hat. This balance helps make the game both easy to understand and visually engaging.
-
-The colorful and friendly design of the icons contributes to a playful user experience, reinforcing the game’s intention to feel enjoyable, simple, and inviting.
+The icons represent a mix of familiar everyday objects—such as a dog, apple, and cupcake—combined with more fun and imaginative elements like a dinosaur and a wizard hat. This balance helps make the game both easy to understand and visually engaging.
 
 <div align="center">
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 400px;">
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 400px;">
   <img src="assets/icons/dog.png" width="80">
   <img src="assets/icons/apple.png" width="80">
   <img src="assets/icons/cupcake.png" width="80">
@@ -203,6 +201,8 @@ The colorful and friendly design of the icons contributes to a playful user expe
   <img src="assets/icons/smiling-face.png" width="80">
   <img src="assets/icons/goggles.png" width="80">
   <img src="assets/icons/sports.png" width="80">
+	<img src="assets/icons/snowman.png" width="80">
+	<img src="assets/icons/tools.png" width="80">
 </div>
 </div>
 
