@@ -397,13 +397,19 @@ Win scenario
 - The player sees a personalized congratulatory message, e.g., 🎉 Well done [playerName]! 🎉
 - Final statistics are displayed: score, total moves, and misses
 - A confetti burst animation is triggered to visually celebrate the victory
+
+<div align="center">
+<img src="/assets/documentation/confetti.png" width="300">
+</div>
+
 Lose scenario
 - A different personalized message is shown, e.g., 😢 Oh no [playerName]! You ran out of points. Try again!
 - Score details are hidden to avoid confusion
 - A rain effect combined with a background change reinforces the losing state
 
-These visual and textual cues provide clear feedback to the player, 
-marking the conclusion of the game and encouraging replayability.
+<div align="center">
+<img src="/assets/documentation/rainfall.png" width="400">
+</div>
 
 #### Play Again / New Game Buttons
 The game provides two options for restarting: Play Again and New Game, each tied directly to specific JavaScript functions.
@@ -413,11 +419,11 @@ Play Again
 - Calls the restartGame() function, which:
 - Resets the game board and shuffles the cards (shuffleCards())
 - Clears moves, misses, and score (resetGameData())
-- Keeps the player’s name intact for a personalized experience
-- Allows the player to quickly replay without re-entering their name
+- Keeps the player’s name and game-preferences intact for a personalized experience
+- Allows the player to quickly replay without re-entering their name and settings
 
 <div align="center">
-<img src="/assets/documentation/play-again.png" width="400">
+<img src="/assets/documentation/play-again.png" width="300">
 </div>
 
 New Game
