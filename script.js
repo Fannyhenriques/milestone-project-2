@@ -11,6 +11,9 @@ const movesEl = document.getElementById("moves");
 const missesEl = document.getElementById("misses");
 const scoreEl = document.getElementById("score");
 
+const difficultySelect = document.getElementById("difficulty");
+const cardCountSelect = document.getElementById("card-count");
+
 // ELEMENTS FOR END SCREEN
 const endScreen = document.getElementById("end-screen");
 const endMessage = document.getElementById("end-message");
@@ -40,6 +43,10 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
+let missPenalty = 5;
+let flipBackDelay = 1000;
+let selectedCardCount = 16;
+
 let cards = [];
 
 let matches = 0;
@@ -52,17 +59,33 @@ let matches = 0;
 // hide start screen, reset data, shuffle cards, render board
 const startGame = (name) => {
 	playerName = name;
+	selectedCardCount = parseInt(cardCountSelect.value);
+
+	const difficulty = difficultySelect.value;
+	if (difficulty === "easy") {
+		missPenalty = 5;
+		flipBackDelay = 1000;
+	}
+	if (difficulty === "medium") {
+		missPenalty = 10;
+		flipBackDelay = 500;
+	}
+	if (difficulty === "hard") {
+		missPenalty = 10;
+		flipBackDelay = 400;
+	}
+
 	// hide the start-section
 	startSection.classList.add("hidden");
 	// show game board and info
 	gameBoard.classList.remove("hidden");
 	gameInfo.classList.remove("hidden");
-	welcomeMessage.classList.remove("hidden");
-	welcomeMessage.innerText = `Lets go ${name}!`;
+
 	// reset moves, misses, score
 	resetGameData();
-	// shuffle cards
-	const shuffledCards = shuffleCards(cards);
+
+	const selectedCards = cards.slice(0, selectedCardCount / 2);
+	const shuffledCards = shuffleCards(selectedCards);
 	//render board
 	renderGameBoard(shuffledCards);
 }
@@ -86,10 +109,19 @@ const resetGameData = () => {
 }
 
 // 3. Render game board
-// Creates the card elements for the board, sets front/back, and adds click listeners
 const renderGameBoard = (cardsArray) => {
 	// clear existing board
 	gameBoard.innerHTML = "";
+
+	gameBoard.classList.remove("grid-12", "grid-16", "grid-20");
+
+	if (selectedCardCount === 12) {
+		gameBoard.classList.add("grid-12");
+	} else if (selectedCardCount === 16) {
+		gameBoard.classList.add("grid-16");
+	} else if (selectedCardCount === 20) {
+		gameBoard.classList.add("grid-20");
+	}
 
 	// create card elements for each card in the array
 	cardsArray.forEach(card => {
@@ -156,6 +188,7 @@ const checkMatch = () => {
 	if (isMatch) {
 		// increment number of matches
 		matches++;
+		score += 5;
 
 		const card1 = firstCard;
 		const card2 = secondCard;
@@ -165,23 +198,18 @@ const checkMatch = () => {
 			card1.classList.add("matched");
 			card2.classList.add("matched");
 		}, 500);
-
 		// reset firstCard and secondCard to allow new selections
 		resetFlippedCards();
-
 		// if all cards are matched, end the game with a win
-		if (matches === cards.length) {
+		if (matches === selectedCardCount / 2) {
 			setTimeout(() => endGame(true), 500);
 		}
 
 	} else {
 		// if cards do not match, increment misses and reduce score
 		misses++;
-		score -= 5;
+		score = Math.max(score - missPenalty, 0);
 		missesEl.innerText = misses;
-
-		// update the score color in UI
-		updateScoreUI();
 
 		// if score drops to 0 or below, end game with a loss
 		if (score <= 0) {
@@ -198,6 +226,8 @@ const checkMatch = () => {
 			resetFlippedCards();
 		}, 1000);
 	}
+	// update the score color and increment points in UI
+	updateScoreUI();
 }
 
 // 6. End game (win or lose)
@@ -250,20 +280,19 @@ const restartGame = () => {
 	// reset game stats (moves, misses, score, matches)
 	resetGameData();
 
+	const selectedCards = cards.slice(0, selectedCardCount / 2);
 	// shuffle cards and render the game board again
-	const shuffledCards = shuffleCards(cards);
+	const shuffledCards = shuffleCards(selectedCards);
 	renderGameBoard(shuffledCards);
 }
 
 // 8. New game (back to start)
-// Resets everything and brings the player back to the start screen to enter a new name
 const newGame = () => {
 
 	// hide game and end screens
 	endScreen.classList.add("hidden");
 	gameBoard.classList.add("hidden");
 	gameInfo.classList.add("hidden");
-	welcomeMessage.classList.add("hidden");
 
 	// show start section for entering a new player name
 	startSection.classList.remove("hidden");
