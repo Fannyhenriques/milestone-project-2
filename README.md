@@ -263,13 +263,27 @@ The welcome form lets the player enter their name, chose difficult level and the
 When the button is clicked, the startGame function runs. The entered name is stored and used for personalized end messages, such as displaying the player’s score or indicating when they run out of points. The name and settings remain if the player chooses to play again.
 The form prevents the game from starting automatically. In the future, local storage could enable session tracking and a persistent scoreboard.
 
+#### Modals
+The game uses modals to show additional info without leaving the main interface, such as rules or game info.
+
+Rules Modal
+- Triggered by the rulesBtn button
+- Displays the game rules in a scrollable popup on smaller screens
+- Can be closed by clicking the close button or clicking outside the modal
 
 <div align="center">
-<img src="/assets/documentation/welcome-message.png" width="300">
+<img src="/assets/documentation/rules-modal.png" width="400">
 </div>
 
-The form also ensures the game does not start automatically when the page loads, giving more control over gameplay. 
-In the future, using local storage could allow tracking multiple game sessions, creating a persistent scoreboard for the player.
+Game Info Modal
+- Triggered by the logoBtn button
+- Shows a brief summary of how the game is built
+
+<div align="center">
+<img src="/assets/documentation/info-modal.png" width="400">
+</div>
+
+Modals are managed with CSS and JavaScript: a hidden class toggles visibility and animations, and event listeners handle button and background clicks to ensure intuitive interaction.
 
 ### Gameboard
 The gameboard is the main interactive area where the memory match game takes place. 
