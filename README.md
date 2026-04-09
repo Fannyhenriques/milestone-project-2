@@ -443,7 +443,18 @@ Both buttons ensure a smooth and predictable transition between game states, pro
 The footer displays a copyright notice at the bottom of the page.
 
 <div align="center">
-<img src="/assets/documentation/footer-desktop.png" width="300">
+<img src="/assets/documentation/footer-desktop.png" width="500">
+</div>
+
+### 404 Page
+The 404 page Displays:
+-  A clear 404 message `<h1>404</h1>` to indicate the user has reached a non-existent page.
+-  A short explanatory text informing the user that they landed in the wrong place.
+- Adds playful visual cards for fun and engagement.
+- Provides a “Back to Game” button for easy navigation back to the main game.
+
+<div align="center">
+<img src="/assets/documentation/404-page.png" width="300">
 </div>
 
 ### Future Features
