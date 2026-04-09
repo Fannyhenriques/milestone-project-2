@@ -5,7 +5,7 @@ const startForm = document.getElementById("start-form");
 const startSection = document.getElementById("start-section");
 const gameBoard = document.querySelector(".game-board");
 const gameInfo = document.querySelector(".game-info");
-const welcomeMessage = document.getElementById("welcome-message");
+const formError = document.getElementById("form-error");
 
 const movesEl = document.getElementById("moves");
 const missesEl = document.getElementById("misses");
@@ -469,11 +469,20 @@ fetch("assets/data/cards.json")
 
 // fetching name before starting the game
 startForm.addEventListener("submit", (e) => {
-	e.preventDefault(); //preventing page reload
+	e.preventDefault();
+
+	formError.innerText = "";
 
 	playerName = document.getElementById("player-name").value.trim();
 
-	if (playerName.length < 2) return;
+	if (playerName.length < 2) {
+		formError.innerText = "Please enter at least 2 characters.";
+		return;
+	}
+	if (cards.length === 0) {
+		formError.innerText = "Cards are still loading. Please wait a moment.";
+		return;
+	}
 
 	startGame(playerName);
 });

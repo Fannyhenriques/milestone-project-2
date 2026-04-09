@@ -161,6 +161,12 @@ button:focus,
 	outline-offset: 2px;
 }
 
+.error-message {
+	color: var(--color-danger);
+	font-size: 2rem;
+	font-weight: bold;
+}
+
 /* =====================
    START SECTION
 ===================== */
@@ -177,13 +183,6 @@ button:focus,
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-}
-
-#welcome-message {
-	font-size: 1.2rem;
-	color: var(--color-primary);
-	margin-bottom: 1.5rem;
-	text-align: center;
 }
 
 /* =====================
@@ -491,7 +490,10 @@ button:focus,
 		width: 2rem;
 	}
 
-	.game-board {
+	.start-form {
+		width: 300px;
+	}
+
 		grid-template-columns: repeat(4, 90px);
 		grid-template-rows: repeat(4, 90px);
 	}
